@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swosti Panda — Systems That Act, Products That Prove | Supply-Chain &amp; Agentic AI Frameworks</title>
+  <meta name="description" content="Open specifications and reference frameworks by Swosti Panda: GateCheck &amp; BirthCheck (Factory-Gate Identity Integrity &amp; Component Genealogy), StoreNode &amp; TimeSplit (Omnichannel Promising), and A-DoA (Agent Delegation-of-Authority)." />
+  <link rel="canonical" href="https://swostipanda.github.io/" />
+  <meta property="og:title" content="Swosti Panda — Supply-Chain &amp; Agentic Operations Systems Hub" />
+  <meta property="og:description" content="Canonical specifications, JSON schemas, and self-assessment scorecards for GateCheck, BirthCheck, Identity Ladder, StoreNode, TimeSplit, and A-DoA." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://swostipanda.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet" />
+  <style>
+/* ==========================================================================
+   Swosti Panda — Supply-Chain & Agentic Operations Systems Hub
+   Editorial / Specification Design System (Vanilla CSS)
+   ========================================================================== */
+
+:root {
+  --bg-paper: #faf8f5;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f2efe9;
+  --bg-code: #161b22;
+  --text-primary: #14181f;
+  --text-secondary: #3e4652;
+  --text-muted: #636b78;
+  --accent-primary: #0f4c5c;
+  --accent-primary-hover: #0a3540;
+  --accent-warm: #8c3b2b;
+  --accent-ochre: #9a6b1f;
+  --border-hairline: #e2dfd7;
+  --border-strong: #c8c3b8;
+  --shadow-Rest: 0 1px 2px rgba(20, 24, 31, 0.04), 0 4px 12px rgba(20, 24, 31, 0.03);
+  --shadow-Hover: 0 4px 16px rgba(20, 24, 31, 0.08);
+  --font-serif: 'Source Serif 4', Georgia, Cambria, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --max-width: 1120px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-paper);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Top Specification Bar */
+.spec-topbar {
+  background-color: var(--text-primary);
+  color: #e6e4df;
+  font-size: 0.78rem;
+  border-bottom: 1px solid #2b313c;
+}
+
+.spec-topbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.spec-topbar a {
+  color: #e6e4df;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(230, 228, 223, 0.45);
+  transition: color 0.15s ease;
+}
+
+.spec-topbar a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+.spec-topbar-links {
+  display: flex;
+  gap: 1.15rem;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+/* Primary Header & Navigation */
+.site-header {
+  background-color: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-hairline);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  line-height: 1.15;
+}
+
+.brand-role {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 0.42rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.nav-link-cta {
+  background-color: var(--accent-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+.nav-link-cta:hover {
+  background-color: var(--accent-primary-hover);
+}
+
+/* Layout Containers */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  padding: 3.5rem 0 2.75rem;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.15rem;
+  max-width: 880px;
+  color: var(--text-primary);
+}
+
+.hero-lead {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  max-width: 820px;
+  margin: 0 0 1.75rem;
+  line-height: 1.65;
+}
+
+.hero-meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.6rem 1.05rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-subtle);
+}
+
+.btn-sm {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+}
+
+/* 3 Pillar Cards Overview */
+.pillars-section {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.pillar-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-Rest);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-Hover);
+  border-color: var(--border-strong);
+}
+
+.pillar-code {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background-color: var(--bg-subtle);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.pillar-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  margin: 0 0 0.55rem;
+  line-height: 1.28;
+}
+
+.pillar-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem;
+}
+
+.pillar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  background-color: var(--bg-paper);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  padding: 0.15rem 0.45rem;
+  border-radius: 3px;
+}
+
+.pillar-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border-hairline);
+}
+
+/* Framework Deep-Dive Sections */
+.framework-section {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.framework-banner {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-Rest);
+}
+
+.framework-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.spec-badge {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.cite-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cite-text {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 240px;
+}
+
+/* Data & Specification Tables */
+.table-wrap {
+  overflow-x: auto;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  margin: 1.25rem 0;
+  box-shadow: var(--shadow-Rest);
+}
+
+table.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+  text-align: left;
+}
+
+table.spec-table th {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid var(--border-strong);
+  font-size: 0.8rem;
+}
+
+table.spec-table td {
+  padding: 0.7rem 0.95rem;
+  border-bottom: 1px solid var(--border-hairline);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+table.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+table.spec-table code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  background-color: var(--bg-subtle);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: var(--text-primary);
+}
+
+/* Two-column layout inside frameworks */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-Rest);
+}
+
+.panel h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin: 0 0 0.65rem;
+  color: var(--text-primary);
+}
+
+.panel ol, .panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.panel li {
+  margin-bottom: 0.42rem;
+}
+
+/* Interactive Self-Assessment Calculator */
+.calculator-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  box-shadow: var(--shadow-Rest);
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-hairline);
+  margin-bottom: 1rem;
+}
+
+.score-pill {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 0.75rem;
+}
+
+.calc-item {
+  background-color: var(--bg-paper);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.calc-item select {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  padding: 0.28rem 0.45rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+/* Code / Schema Pre Block */
+.code-block {
+  background-color: var(--bg-code);
+  color: #e6edf3;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  line-height: 1.55;
+  margin: 0.75rem 0 0;
+}
+
+/* Adoption Register Form */
+.register-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+/* Footer */
+.site-footer {
+  padding: 2.5rem 0 3rem;
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-strong);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background-color: var(--text-primary);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-Hover);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 2.25rem 0 2rem;
+  }
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Swosti Panda",
+    "jobTitle": "Business Systems Analyst, Supply-Chain Systems Architecture",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Google LLC (Devices & Services)"
+    },
+    "url": "https://swostipanda.github.io/",
+    "sameAs": [
+      "https://github.com/swostipanda",
+      "https://scholar.google.com/citations?user=uuxtl9YAAAAJ",
+      "https://orcid.org/0009-0008-3947-4437"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Top Specification Bar -->
+  <div class="spec-topbar">
+    <div class="spec-topbar-inner">
+      <span>Open Reference Specifications &amp; Operational Control Schemas · CC BY 4.0 / Apache 2.0</span>
+      <div class="spec-topbar-links">
+        <a href="https://orcid.org/0009-0008-3947-4437" target="_blank" rel="noopener">ORCID: 0009-0008-3947-4437</a>
+        <a href="https://scholar.google.com/citations?user=uuxtl9YAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/swostipanda" target="_blank" rel="noopener">github.com/swostipanda</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="#top" class="brand-block">
+        <span class="brand-name">Swosti Panda, SMIEEE</span>
+        <span class="brand-role">Supply-Chain &amp; Operations Systems Architecture · Board Member, IEEE TEMS SCV</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#gatecheck" class="nav-link">GateCheck &amp; BirthCheck</a>
+        <a href="#storenode" class="nav-link">StoreNode &amp; TimeSplit</a>
+        <a href="#adoa" class="nav-link">A-DoA Framework</a>
+        <a href="#publications" class="nav-link">Publications &amp; Talks</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#adoption-register" class="nav-link nav-link-cta">Register Adoption</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">Open Research &amp; Practitioner Canon · v1.0 (2026)</div>
+        <h1 class="hero-title">Systems That Act, Products That Prove.</h1>
+        <p class="hero-lead">
+          Vendor-neutral architectures, control matrices, and open schemas for three foundational problems in modern physical-product operations:
+          <strong>(1) enforcing device identity and component genealogy from the factory gate to repair</strong>,
+          <strong>(2) modeling physical stores as planned supply nodes with time-phased channel segmentation</strong>, and
+          <strong>(3) governing autonomous AI agents through delegation-of-authority controls</strong>.
+        </p>
+        <div class="hero-meta-bar">
+          <a href="#gatecheck" class="btn btn-primary">Explore the 3 Frameworks</a>
+          <a href="#adoption-register" class="btn btn-secondary">Register Organizational Adoption</a>
+          <a href="schemas/gatecheck-birthcheck-genealogy.schema.json" class="btn btn-secondary" download>Download Genealogy JSON Schema</a>
+          <a href="schemas/adoa-decision-record.schema.json" class="btn btn-secondary" download>Download A-DoA JSON Schema</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 Pillar Overview Cards -->
+    <section class="pillars-section" aria-labelledby="pillars-heading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Canonical Frameworks</span>
+            <h2 id="pillars-heading" class="section-title">Three Reference Architectures You Can Cite &amp; Deploy</h2>
+          </div>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Card 1 -->
+          <article class="pillar-card">
+            <div>
+              <span class="pillar-code">OC-1 · IDENTITY &amp; ANTI-COUNTERFEIT</span>
+              <h3>GateCheck, BirthCheck &amp; Identity Ladder</h3>
+              <p>
+                Move device-identity validation (serial, IMEI, multi-unit kit hierarchy) to the contract-manufacturer shipment event, carry one lifecycle record through repair, and reconcile component birth records against field telemetry to detect counterfeit and "Franken-device" warranty abuse.
+              </p>
+              <div class="pillar-tags">
+                <span class="tag">GS1 EPCIS 2.0</span>
+                <span class="tag">IPC-1782</span>
+                <span class="tag">AGMA Brand Protection</span>
+                <span class="tag">EU Digital Product Passport</span>
+              </div>
+            </div>
+            <div class="pillar-actions">
+              <a href="#gatecheck" class="btn btn-primary btn-sm">Read Specification</a>
+              <a href="#identity-ladder-calc" class="btn btn-secondary btn-sm">Run 15-Item Self-Assessment</a>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('gatecheck')">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="pillar-card">
+            <div>
+              <span class="pillar-code">OC-2 · OMNICHANNEL PROMISING</span>
+              <h3>StoreNode, TimeSplit &amp; Launch Playbook</h3>
+              <p>
+                Publish physical store allocations into the enterprise order-promising engine via standard replenishment-order constructs (eliminating mirrored-ATP double-selling) and apply time-phased channel segmentation to in-transit supply so stores can capture launch pre-orders.
+              </p>
+              <div class="pillar-tags">
+                <span class="tag">Enterprise ATP</span>
+                <span class="tag">BOPIS Contention</span>
+                <span class="tag">In-Transit Segmentation</span>
+                <span class="tag">NPI Launch Control</span>
+              </div>
+            </div>
+            <div class="pillar-actions">
+              <a href="#storenode" class="btn btn-primary btn-sm">Read Specification</a>
+              <a href="#launch-playbook" class="btn btn-secondary btn-sm">10-Step Launch Playbook</a>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('storenode')">Copy BibTeX</button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="pillar-card">
+            <div>
+              <span class="pillar-code">OC-3 · AGENTIC AI GOVERNANCE</span>
+              <h3>A-DoA Framework &amp; Autonomy Tiers T0–T3</h3>
+              <p>
+                Treat every autonomous AI agent as a formal delegate inside the enterprise control system — authority granted per action class across Tiers T0–T3 (<em>Delegate</em>), constrained by automatic downgrade triggers (<em>Bound</em>), evidenced by an immutable decision record (<em>Record</em>), and assigned to a named human control owner (<em>Own</em>).
+              </p>
+              <div class="pillar-tags">
+                <span class="tag">COSO / SOX Controls</span>
+                <span class="tag">NIST AI RMF</span>
+                <span class="tag">ISO/IEC 42001</span>
+                <span class="tag">IEEE 2863 &amp; 3119</span>
+              </div>
+            </div>
+            <div class="pillar-actions">
+              <a href="#adoa" class="btn btn-primary btn-sm">Read Specification</a>
+              <a href="#adoa-readiness-calc" class="btn btn-secondary btn-sm">Vendor Readiness Scorecard</a>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('adoa')">Copy BibTeX</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         FRAMEWORK 1: GATECHECK, BIRTHCHECK & IDENTITY LADDER
+         ================================================================== -->
+    <section id="gatecheck" class="framework-section">
+      <div class="container">
+        <div class="framework-banner">
+          <div class="framework-meta-row">
+            <span class="section-kicker">Framework Specification 01 · CC BY 4.0</span>
+            <span class="spec-badge">Version 1.0 · October 2026</span>
+          </div>
+          <h2 class="section-title">GateCheck, BirthCheck &amp; The Identity Ladder (Levels 0–4)</h2>
+          <p style="color: var(--text-secondary); margin: 0.65rem 0 0;">
+            <strong>Definition:</strong> <em>GateCheck</em> is a vendor-neutral operating architecture in which a hardware unit's identity — serial number, IMEI/EID, multi-unit kit (bundle) hierarchy, and serialized component birth set — is validated at the moment a contract manufacturer creates the shipment event, carried as a single lifecycle record through logistics, retail, RMA, non-conforming-unit (NCU) quarantine, and authorized repair, and reconciled via <em>BirthCheck</em> against field telemetry to detect counterfeit and re-assembled ("Franken") devices.
+          </p>
+          <div class="cite-box">
+            <div class="cite-text">
+              <strong>Cite as:</strong> Panda, S. (2026). <em>GateCheck &amp; BirthCheck: Factory-Gate Identity Integrity and Component Birth-Record Reconciliation Framework (v1.0)</em>. Open Specification. https://swostipanda.github.io/#gatecheck
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('gatecheck')">Copy BibTeX</button>
+              <a href="schemas/gatecheck-birthcheck-genealogy.schema.json" class="btn btn-primary btn-sm" download>JSON Schema (.json)</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h4>Five Architectural Components (GateCheck)</h4>
+            <ol>
+              <li><strong>Declaration:</strong> Brand owner publishes item master data to the manufacturer network: serialized flag, identifier type per item (Serial, IMEI, SGTIN), kit flag, and declared child count per kit.</li>
+              <li><strong>Factory-Gate Validation:</strong> Rule Set v1 (<code>FG-01</code> to <code>FG-08</code>) evaluated when the shipment notice is created; non-conforming shipments are rejected before departure with machine-readable line reasons.</li>
+              <li><strong>Single Lifecycle Record:</strong> One append-only record opened per unit at shipment creation; tracks <code>IN_TRANSIT</code>, <code>RECEIVED</code>, <code>ALLOCATED</code>, <code>SOLD</code>, <code>ACTIVATED</code>, <code>NCU_QUARANTINED</code>, <code>AUTHORIZED_REPAIR</code>, and <code>SCRAPPED</code>.</li>
+              <li><strong>Component Genealogy (BirthCheck):</strong> Binds serialized sub-assemblies (SoC, MLB, display, battery, secure element) at birth and reconciles field/RMA observations against the birth tuple.</li>
+              <li><strong>Audit &amp; DPP Evidence:</strong> Role-scoped exposure for warranty adjudication, carrier lock/unlock, customs/brand protection, and EU Digital Product Passport (ESPR) compliance.</li>
+            </ol>
+          </div>
+
+          <div class="panel">
+            <h4>Identity Ladder — Maturity Model (Levels 0–4)</h4>
+            <ul>
+              <li><strong>Level 0 — Batch:</strong> Units tracked by lot/quantity only; serials, if captured, live in disconnected supplier spreadsheets.</li>
+              <li><strong>Level 1 — Receipt-Checked:</strong> Serials/IMEIs validated only at 3PL warehouse receipt, carrier activation, or warranty claim — after defects have entered inventory and finance.</li>
+              <li><strong>Level 2 — Gate-Validated (GateCheck Core):</strong> Identity validated at contract-manufacturer shipment creation against declared master data; multi-unit kits validated for parent–child completeness.</li>
+              <li><strong>Level 3 — Lifecycle-Continuous:</strong> Single unit record carried from factory gate through retail, NCU quarantine, and authorized repair; warranty and carrier systems read one source of truth.</li>
+              <li><strong>Level 4 — Genealogy-Verified (BirthCheck &amp; DPP-Ready):</strong> Component-level birth records reconciled against field telemetry and repair scans; automated detection of "Franken-devices" and cloned component serials.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Factory-Gate Validation Rule Set v1 -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 1A · GateCheck Factory-Gate Validation Rule Set v1 (Shipment Creation)</h3>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Rule ID</th>
+                <th>Validation Rule</th>
+                <th>Inputs Evaluated</th>
+                <th>Action on Failure</th>
+                <th>GS1 EPCIS 2.0 Mapping</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>FG-01</code></td>
+                <td><strong>Identifier Presence</strong> — serialized items carry declared identifier type(s)</td>
+                <td>Item declaration; ASN shipment lines</td>
+                <td>Reject line before shipment departure</td>
+                <td><code>ObjectEvent</code> <code>epcList</code></td>
+              </tr>
+              <tr>
+                <td><code>FG-02</code></td>
+                <td><strong>Format &amp; Check Digit</strong> — matches regex pattern; IMEI passes Luhn &amp; TAC check</td>
+                <td>Identifier string; item master pattern</td>
+                <td>Reject line with syntax error code</td>
+                <td>CBV identifier syntax check</td>
+              </tr>
+              <tr>
+                <td><code>FG-03</code></td>
+                <td><strong>Intra-Shipment Uniqueness</strong> — zero duplicate identifiers across lines/cartons</td>
+                <td>All identifiers in shipment payload</td>
+                <td>Reject entire shipment document</td>
+                <td>Document-level EPC uniqueness</td>
+              </tr>
+              <tr>
+                <td><code>FG-04</code></td>
+                <td><strong>Cross-Shipment Registry Uniqueness</strong> — not active in prior shipment</td>
+                <td>Rolling brand-owner identity registry</td>
+                <td>Reject line; flag duplicate source CM</td>
+                <td>Commissioning registry state check</td>
+              </tr>
+              <tr>
+                <td><code>FG-05</code></td>
+                <td><strong>Kit Completeness</strong> — parent kit carries exact declared child count</td>
+                <td>Kit master-data declaration</td>
+                <td>Reject kit hierarchy</td>
+                <td><code>AggregationEvent</code> <code>childEPCs</code> count</td>
+              </tr>
+              <tr>
+                <td><code>FG-06</code></td>
+                <td><strong>Kit Membership</strong> — child EPCs belong to declared child GTINs</td>
+                <td>Kit BOM child GTIN map</td>
+                <td>Reject kit hierarchy</td>
+                <td><code>AggregationEvent</code> child GTIN validation</td>
+              </tr>
+              <tr>
+                <td><code>FG-07</code></td>
+                <td><strong>SKU–Identifier Consistency</strong> — serial prefix/TAC belongs to SKU family</td>
+                <td>SKU allocation range table</td>
+                <td>Reject line</td>
+                <td>Master-data attribute check</td>
+              </tr>
+              <tr>
+                <td><code>FG-08</code></td>
+                <td><strong>Quantity Reconciliation</strong> — count of valid serials equals shipped quantity</td>
+                <td>Shipment header/line quantity</td>
+                <td>Reject document</td>
+                <td><code>quantityList</code> vs. <code>epcList</code> cardinality</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BirthCheck 4-Rule Anti-Counterfeit Protocol -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 1B · BirthCheck Protocol — 4-Rule Component Genealogy Reconciliation (Identity Ladder Level 4)</h3>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Rule ID</th>
+                <th>Check Name</th>
+                <th>Inputs Compared</th>
+                <th>Trigger Event</th>
+                <th>Control Action on Mismatch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>BC-01</code></td>
+                <td><strong>Birth-Set Match</strong></td>
+                <td>Unit primary ID (<code>SN</code>/<code>IMEI</code>) + observed component tuple (<code>SoC</code>, <code>MLB</code>, <code>Display</code>, <code>Battery</code>, <code>SecureElement</code>) vs. factory birth record</td>
+                <td>Activation, field telemetry check-in, or RMA intake scan</td>
+                <td>Flag unit <code>SUSPECT_COMPONENT_MISMATCH</code> unless covered by a signed <code>BC-02</code> repair event</td>
+              </tr>
+              <tr>
+                <td><code>BC-02</code></td>
+                <td><strong>Authorized Repair Continuity</strong></td>
+                <td>Observed replacement component serial vs. authorized service provider <code>TransformationEvent</code></td>
+                <td>Post-repair re-registration or subsequent warranty claim</td>
+                <td>If component changed without authorized repair event → route to warranty-abuse hold</td>
+              </tr>
+              <tr>
+                <td><code>BC-03</code></td>
+                <td><strong>Cross-Unit Anti-Clone Check</strong></td>
+                <td>Observed component serial across all active parent units in the registry</td>
+                <td>Any diagnostic telemetry or repair bench scan</td>
+                <td>If one component serial is active in <code>&gt;1</code> parent unit without prior disaggregation/scrap → flag <code>CLONED_OR_HARVESTED</code></td>
+              </tr>
+              <tr>
+                <td><code>BC-04</code></td>
+                <td><strong>Quarantine / NCU Gate</strong></td>
+                <td>Unit or component lifecycle state (<code>NCU_QUARANTINED</code>, <code>SCRAPPED</code>, <code>LOST_IN_TRANSIT</code>)</td>
+                <td>Warranty claim creation, RMA credit issuance, or trade-in valuation</td>
+                <td>Block automated credit/payout; escalate to investigator under <strong>A-DoA Tier T1/T2</strong> with full decision record</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Interactive 15-Question Identity Ladder Self-Assessment -->
+        <div id="identity-ladder-calc" class="calculator-box">
+          <div class="calc-header">
+            <div>
+              <span class="section-kicker">Interactive Benchmark Tool</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 0;">Identity Ladder &amp; BirthCheck Self-Assessment (15 Questions)</h3>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0.25rem 0 0;">
+                Score each capability in your supply chain (0 = No, 1 = Partial / Manual, 2 = Automated in Production) to compute your Identity Ladder level and DPP readiness.
+              </p>
+            </div>
+            <div id="ladder-score-display" class="score-pill">Score: 0 / 30 · Level 0 (Batch)</div>
+          </div>
+
+          <div id="ladder-questions-grid" class="calc-grid"></div>
+
+          <div style="margin-top: 1.15rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">
+              Scoring bands: <strong>0–10</strong> Level 0–1 (Batch / Receipt-Checked) · <strong>11–18</strong> Level 2 (Gate-Validated) · <strong>19–25</strong> Level 3 (Lifecycle-Continuous) · <strong>26–30</strong> Level 4 (Genealogy-Verified &amp; DPP-Ready)
+            </span>
+            <a href="#adoption-register" class="btn btn-primary btn-sm" onclick="prefillAdoption('GateCheck / BirthCheck / Identity Ladder')">Log Score in Adoption Register →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         FRAMEWORK 2: STORENODE, TIMESPLIT & LAUNCH PROMISING PLAYBOOK
+         ================================================================== -->
+    <section id="storenode" class="framework-section">
+      <div class="container">
+        <div class="framework-banner">
+          <div class="framework-meta-row">
+            <span class="section-kicker">Framework Specification 02 · CC BY 4.0</span>
+            <span class="spec-badge">Version 1.0 · October 2026</span>
+          </div>
+          <h2 class="section-title">StoreNode Reference Architecture, TimeSplit &amp; Launch Promising Playbook</h2>
+          <p style="color: var(--text-secondary); margin: 0.65rem 0 0;">
+            <strong>Definition:</strong> In <em>StoreNode</em>, each physical retail store is modeled as a planned supply node of the enterprise order-promising engine: store allocations are published via standard replenishment-order constructs rather than bespoke mirrored-ATP syncs, and <em>TimeSplit</em> applies channel-segmentation rules across both on-hand and ASN-driven in-transit horizons so online orders, buy-online-pick-up-in-store (BOPIS), and store pre-orders are promised by one engine against one view of supply.
+          </p>
+          <div class="cite-box">
+            <div class="cite-text">
+              <strong>Cite as:</strong> Panda, S. (2026). <em>StoreNode Reference Architecture and TimeSplit Time-Phased Channel Segmentation (v1.0)</em>. Open Specification. https://swostipanda.github.io/#storenode
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('storenode')">Copy BibTeX</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h4>StoreNode + TimeSplit Mechanics</h4>
+            <ul>
+              <li><strong>Supply Publication via Standard Replenishment Constructs:</strong> Store allocations enter the enterprise promising engine as planned receipts/replenishment orders, removing the race conditions and double-selling caused by mirroring store shelf ATP into e-commerce during high-velocity launches.</li>
+              <li><strong>Time-Phased Horizon Segmentation (TimeSplit):</strong> Channel segments (<code>WALK_IN</code>, <code>ONLINE_BOPIS</code>, <code>REPLACEMENT_WARRANTY</code>) exist per time bucket (<code>On-Hand</code>, <code>ETA+0</code>, <code>ETA+1</code>… driven by inbound ASNs). Store pre-orders consume the in-transit segment of the matching channel before the truck arrives.</li>
+              <li><strong>Proportional Receipt Reconciliation:</strong> When physical received quantities differ from segmented ASN quantities, <em>TimeSplit</em> reconciles segments proportionally according to configurable channel priority rather than manual adjustment.</li>
+              <li><strong>Walk-In Floor &amp; Timed Spill Release:</strong> Enforces a minimum walk-in floor and per-store pre-order exposure cap; unconsumed pre-order segments release automatically into the pooled walk-in/BOPIS pool at a configurable <code>T-minus</code> hours before launch.</li>
+            </ul>
+          </div>
+
+          <div id="launch-playbook" class="panel">
+            <h4>Launch Promising Playbook — 10-Step NPI Checklist</h4>
+            <ol>
+              <li>Declare which channels may promise against in-transit supply (and which are restricted to on-hand).</li>
+              <li>Publish store nodes and planned receipts to the enterprise promising engine 6 weeks before launch.</li>
+              <li>Configure <em>TimeSplit</em> segmentation percentages per SKU family with an explicit walk-in floor.</li>
+              <li>Set the maximum pre-order exposure cap per store and region.</li>
+              <li>Bind inbound ASN ETA updates to promising horizon buckets.</li>
+              <li>Dry-run launch contention with synthetic peak demand; eliminate race conditions in the sync layer.</li>
+              <li>Configure receipt-discrepancy priority and automatic spill rules.</li>
+              <li>Set the timed release window for unconsumed pre-order segments.</li>
+              <li>Stand up store scrap and return-to-vendor inventory controls prior to launch day.</li>
+              <li>Execute cross-functional Go/No-Go (Store Ops, E-Commerce, Supply Chain, Finance); freeze rules at <code>T-72h</code> and log every override.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         FRAMEWORK 3: A-DOA & AUTONOMY TIERS T0-T3
+         ================================================================== -->
+    <section id="adoa" class="framework-section">
+      <div class="container">
+        <div class="framework-banner">
+          <div class="framework-meta-row">
+            <span class="section-kicker">Framework Specification 03 · CC BY 4.0</span>
+            <span class="spec-badge">Version 1.0 · First Presented IEEE TEMS-SCV (Dec 3, 2026)</span>
+          </div>
+          <h2 class="section-title">Agent Delegation-of-Authority (A-DoA) &amp; Autonomy Tiers T0–T3</h2>
+          <p style="color: var(--text-secondary); margin: 0.65rem 0 0;">
+            <strong>Premise:</strong> Existing AI frameworks (NIST AI RMF, ISO/IEC 42001) govern AI at the organizational level, while internal-control frameworks (COSO, SOX segregation of duties and approval matrices) govern humans and deterministic ERP workflows. <em>A-DoA</em> bridges the two by treating every autonomous AI agent as a formal <strong>delegate</strong> inside the organization's existing control system across four pillars: <strong>Delegate · Bound · Record · Own</strong>.
+          </p>
+          <div class="cite-box">
+            <div class="cite-text">
+              <strong>Cite as:</strong> Panda, S. (2026). <em>Agent Delegation-of-Authority (A-DoA) Framework and Autonomy Tiers T0–T3 for Autonomous AI in Operations (v1.0)</em>. Open Specification. https://swostipanda.github.io/#adoa
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('adoa')">Copy BibTeX</button>
+              <a href="schemas/adoa-decision-record.schema.json" class="btn btn-primary btn-sm" download>Decision Record Schema (.json)</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Autonomy Tiers Table -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.25rem 0 0.5rem;">Table 3A · A-DoA Agent Autonomy Tiers (T0–T3)</h3>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Name</th>
+                <th>Permitted Agent Authority</th>
+                <th>Mandatory Control Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>T0</code></td>
+                <td><strong>Observe &amp; Recommend</strong></td>
+                <td>Ingest telemetry, correlate anomalies, and draft recommendations; human executes the transaction.</td>
+                <td>Recommendation log + golden-set evaluation score</td>
+              </tr>
+              <tr>
+                <td><code>T1</code></td>
+                <td><strong>Act &amp; Notify</strong></td>
+                <td>Execute bounded, reversible operational actions; notify named human owner immediately post-action.</td>
+                <td>Immutable A-DoA Decision Record + owner notification receipt</td>
+              </tr>
+              <tr>
+                <td><code>T2</code></td>
+                <td><strong>Act Within Limits (Approve Above Threshold)</strong></td>
+                <td>Execute autonomously below monetary, volume, and frequency thresholds derived from the enterprise DoA; route above-threshold actions for human sign-off.</td>
+                <td>A-DoA Decision Record + threshold evaluation proof + human approval link (when triggered)</td>
+              </tr>
+              <tr>
+                <td><code>T3</code></td>
+                <td><strong>Act Alone With Audit</strong></td>
+                <td>Execute across the action class (e.g., automated safety/quality quarantine); subject to statistical audit sampling and strict runtime downgrade triggers.</td>
+                <td>A-DoA Decision Record + quarterly control-owner sampling attestation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Worked Operations DoA Matrix -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 3B · Reference A-DoA Control Matrix for Supply-Chain &amp; Finance Action Classes</h3>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Action Class</th>
+                <th>Default Tier</th>
+                <th>Runtime Limits (Monetary / Scope / Frequency)</th>
+                <th>Mandatory Pre-Conditions</th>
+                <th>Automatic Suspension Trigger (Bound)</th>
+                <th>Accountable Human Owner (Own)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Reroute shipment within contracted carrier &amp; lane</strong></td>
+                <td><code>T2</code></td>
+                <td>Cost delta &le; threshold per shipment; &le; N reroutes/day</td>
+                <td>Active carrier contract; predicted SLA breach confirmed</td>
+                <td>Carrier rate table stale or exception rate &gt; threshold over rolling 24h → downgrade to <code>T0</code></td>
+                <td>Logistics Operations Manager</td>
+              </tr>
+              <tr>
+                <td><strong>Rebalance inventory between regional stores</strong></td>
+                <td><code>T2</code></td>
+                <td>&le; N units per SKU/day; walk-in floor preserved</td>
+                <td>Zero open quality/NCU alerts on SKU</td>
+                <td>Inventory discrepancy or stock-out spike → downgrade to <code>T0</code></td>
+                <td>Store Inventory Lead</td>
+              </tr>
+              <tr>
+                <td><strong>Create release PO against blanket agreement</strong></td>
+                <td><code>T2</code></td>
+                <td>PO value &le; DoA band; approved AVL supplier only</td>
+                <td>Blanket agreement active; open budget verified</td>
+                <td>Unit-price variance &gt; 0% vs. contract master → block &amp; downgrade</td>
+                <td>Procurement Category Manager</td>
+              </tr>
+              <tr>
+                <td><strong>Approve 3-way-matched invoice</strong></td>
+                <td><code>T2</code></td>
+                <td>Invoice &le; DoA band; quantity/price variance within tolerance</td>
+                <td>Validated PO, factory-gate ASN (<code>GateCheck</code>), and 3PL receipt match</td>
+                <td>Any change to prompt/model/policy version → automatic downgrade 1 tier until golden-set re-audit</td>
+                <td>Accounts Payable Controller</td>
+              </tr>
+              <tr>
+                <td><strong>Quarantine inventory / hold RMA on BirthCheck alert</strong></td>
+                <td><code>T3</code> / <code>T1</code></td>
+                <td>Quarantine hold: <code>T3</code> (immediate); credit denial: <code>T0/T1</code> (human review)</td>
+                <td><code>BC-01..BC-04</code> mismatch or quality alert</td>
+                <td>False-positive rate on golden set exceeds bound → downgrade to <code>T1</code></td>
+                <td>Quality &amp; Brand-Protection Manager</td>
+              </tr>
+              <tr>
+                <td><strong>Modify supplier master data or payment terms</strong></td>
+                <td><code>T0</code></td>
+                <td>Prohibited from autonomous execution (segregation of duties)</td>
+                <td>Dual human approval required</td>
+                <td>Hard runtime block in tool layer</td>
+                <td>Master-Data Governance Owner</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Interactive Vendor Readiness Assessment -->
+        <div id="adoa-readiness-calc" class="calculator-box">
+          <div class="calc-header">
+            <div>
+              <span class="section-kicker">Interactive Procurement &amp; Audit Tool (Aligned with IEEE 3119 / ISO 42001 / COSO)</span>
+              <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 0;">A-DoA Vendor Autonomy-Readiness Assessment (10 Core Controls)</h3>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0.25rem 0 0;">
+                Evaluate any internal or vendor AI agent before granting Tier T1–T3 autonomy in production.
+              </p>
+            </div>
+            <div id="adoa-score-display" class="score-pill">Readiness: 0 / 20 · Maximum Recommended Tier: T0</div>
+          </div>
+
+          <div id="adoa-questions-grid" class="calc-grid"></div>
+
+          <div style="margin-top: 1.15rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">
+              Gate rule: Agents scoring <strong>&lt;12</strong> must remain at <strong>T0 (Observe &amp; Recommend)</strong>; <strong>12–16</strong> qualify for <strong>T1 (Act &amp; Notify)</strong>; <strong>17–20</strong> (with runtime limit enforcement + immutable decision records) qualify for <strong>T2/T3</strong>.
+            </span>
+            <a href="#adoption-register" class="btn btn-primary btn-sm" onclick="prefillAdoption('A-DoA Framework & Autonomy Tiers T0-T3')">Register A-DoA Adoption →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         PUBLICATIONS, SPEAKING & IEEE TEMS-SCV SERIES
+         ================================================================== -->
+    <section id="publications" class="framework-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Scholarship, Industry Practice &amp; Convening</span>
+            <h2 class="section-title">Publications, Working Papers &amp; Speaking</h2>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h4>Published &amp; Forthcoming Practitioner Articles</h4>
+            <ul>
+              <li>
+                <strong>ISM <em>Inside Supply Management</em> (September 2026, Published):</strong>
+                "Unifying the Pipeline: Bridging B2B Manufacturing and Direct-to-Consumer Retail Fulfillment" — Swosti Panda.
+              </li>
+              <li>
+                <strong>INFORMS <em>Analytics</em> Magazine (October 2026):</strong>
+                Practitioner feature on enterprise supply-chain and operations analytics — Swosti Panda.
+              </li>
+            </ul>
+
+            <h4 style="margin-top: 1.25rem;">Book Monograph &amp; Manuscripts Under Review</h4>
+            <ul>
+              <li>
+                <strong>Springer Monograph Proposal (Submitted October 2026):</strong>
+                <em>Agentic AI in Smart Systems</em> — Swosti Panda, SMIEEE (lead author) and Dr. Swati Panda, Ph.D. (New York Institute of Technology). 9-chapter monograph covering multi-agent architectures, digital custody and multi-tier device serialization (Ch. 4), autonomous failure analysis (Ch. 5), omnichannel optimization (Ch. 6), touchless cost engineering (Ch. 7), evaluation/golden sets/HITL tiers (Ch. 8), and agent governance (Ch. 9).
+              </li>
+              <li>
+                <strong><em>IEEE Software</em> (Manuscript Under Review, 2026):</strong>
+                "From Hallucinations to Determinism" — Swosti Panda.
+              </li>
+              <li>
+                <strong><em>IEEE Engineering Management Review</em> (Manuscript Under Review, 2026):</strong>
+                "Managing the 'Portfolio Paradox' in Supply Chain AI: Practitioner Insights from Global Hardware Operations" — Swosti Panda.
+              </li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h4>Invited Talks, Standards &amp; The IEEE TEMS-SCV Series</h4>
+            <ul>
+              <li>
+                <strong>December 3, 2026 — IEEE TEMS Santa Clara Valley Chapter Talk:</strong>
+                <em>"When AI Stops Suggesting and Starts Acting: Governing Autonomous Systems in Operations"</em> — public presentation of the <strong>A-DoA Framework</strong> (<em>Delegate · Bound · Record · Own</em>) and <strong>Autonomy Tiers T0–T3</strong>.
+              </li>
+              <li>
+                <strong>2027 Monthly Webinar Series — <em>Acting Agents &amp; Trusted Supply Chains</em>:</strong>
+                Curated as Board Member of the IEEE TEMS Santa Clara Valley Chapter, convening practitioners from GS1, IPC, AGMA, INFORMS, and enterprise AI governance.
+              </li>
+              <li>
+                <strong>Peer Review &amp; Judging Service:</strong>
+                Reviewer for <em>IEEE Transactions on Engineering Management</em>, <em>IEEE Access</em>, and <em>IEEE ICLIE 2026</em>; Observer on the <strong>INFORMS Franz Edelman Award Selection Committee (2026–2027)</strong>.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         ADOPTION REGISTER & BENCHMARK LOG
+         ================================================================== -->
+    <section id="adoption-register" class="framework-section">
+      <div class="container">
+        <div class="framework-banner">
+          <span class="section-kicker">External Implementation &amp; Citation Log</span>
+          <h2 class="section-title">Register Organizational Adoption or Request a Benchmark</h2>
+          <p style="color: var(--text-secondary); margin: 0.5rem 0 0; font-size: 0.92rem;">
+            Are you using <strong>GateCheck / BirthCheck</strong>, <strong>StoreNode / TimeSplit</strong>, or the <strong>A-DoA Framework</strong> in an enterprise supply chain, brand-protection program, audit checklist, standards working group, or university course? Register your use below to be listed in the public adoption log (or mark your entry confidential for aggregate reporting).
+          </p>
+
+          <form id="adoption-form" class="register-form" onsubmit="handleAdoptionSubmit(event)">
+            <div class="form-group">
+              <label for="adopt-name">Your Name &amp; Title *</label>
+              <input id="adopt-name" type="text" required placeholder="e.g., Jane Doe, Director of Brand Protection" />
+            </div>
+            <div class="form-group">
+              <label for="adopt-org">Organization / University *</label>
+              <input id="adopt-org" type="text" required placeholder="e.g., OEM / 3PL / University / Standards WG" />
+            </div>
+            <div class="form-group">
+              <label for="adopt-framework">Framework Used or Cited *</label>
+              <select id="adopt-framework" required>
+                <option value="GateCheck / BirthCheck / Identity Ladder">OC-1 · GateCheck / BirthCheck / Identity Ladder</option>
+                <option value="StoreNode / TimeSplit / Launch Playbook">OC-2 · StoreNode / TimeSplit / Launch Promising Playbook</option>
+                <option value="A-DoA Framework & Autonomy Tiers T0-T3">OC-3 · A-DoA Framework &amp; Autonomy Tiers T0–T3</option>
+                <option value="Multiple Frameworks">Multiple Frameworks</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="adopt-type">Adoption / Engagement Type *</label>
+              <select id="adopt-type" required>
+                <option value="Production / Pilot Implementation">Production or Pilot Implementation</option>
+                <option value="Internal Control / Audit Checklist">Internal Control or Vendor Audit Checklist</option>
+                <option value="Standards / Working-Group Reference">Standards / Working-Group Reference (IPC, GS1, AGMA, IEEE)</option>
+                <option value="Academic Citation / Course Syllabus">Academic Citation or Course Syllabus</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label for="adopt-notes">How is your organization applying or referencing the framework? *</label>
+              <textarea id="adopt-notes" rows="3" required placeholder="Briefly describe the use case, self-assessment score, syllabus, or working-group reference..."></textarea>
+            </div>
+            <div class="form-group full-width" style="flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+              <span style="font-size: 0.78rem; color: var(--text-muted);">
+                Submitting generates a dated record you can send directly or log via GitHub Issues / email.
+              </span>
+              <button type="submit" class="btn btn-primary">Generate Dated Adoption Record</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         ABOUT (RECORD-ALIGNED BIO)
+         ================================================================== -->
+    <section id="about" class="framework-section" style="border-bottom: none;">
+      <div class="container">
+        <div class="panel">
+          <span class="section-kicker">About the Author</span>
+          <h2 class="section-title" style="margin-bottom: 0.75rem;">Swosti Panda, SMIEEE</h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0 0 0.85rem;">
+            Swosti Panda designs the business systems that run physical-product supply chains. At Google Devices &amp; Services she has authored the functional designs behind a sequence of launches since 2020: device-level serialization and identity integrity from the factory onward; the inbound-logistics and receipt services of an Oracle-to-SAP S/4HANA transformation; the omnichannel inventory architecture behind Google's physical stores; the hardware costing platform; and the product requirements for a multi-agent AI assistant for hardware failure analysis. Before Google she led BI and analytics for Sam's Club's retail fuel business at Walmart and configured SAP supply-chain and finance modules at Infosys Consulting.
+          </p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">
+            She is an IEEE Senior Member, a Board Member of the IEEE Technology and Engineering Management Society (TEMS) Santa Clara Valley Chapter, an Observer on the INFORMS Franz Edelman Award Selection Committee (2026–2027), a peer reviewer for <em>IEEE Access</em> and <em>IEEE Transactions on Engineering Management</em>, and a contributor to ISM's <em>Inside Supply Management</em> and INFORMS <em>Analytics</em>.
+          </p>
+          <p style="font-size: 0.78rem; color: var(--text-muted); margin: 1rem 0 0; padding-top: 0.75rem; border-top: 1px solid var(--border-hairline);">
+            <em>Disclaimer:</em> All frameworks, schemas, and specifications on this site are published in a personal professional capacity at a vendor-neutral pattern level with synthetic illustrations, and do not represent confidential information or official positions of Google LLC or Alphabet Inc.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Swosti Panda</strong> · Open Supply-Chain &amp; Agentic Operations Specifications<br />
+        Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Schemas licensed under Apache 2.0.
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://github.com/swostipanda" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=uuxtl9YAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://orcid.org/0009-0008-3947-4437" target="_blank" rel="noopener">ORCID</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+/* Interactive logic for Swosti Panda's Specification Hub (swostipanda.github.io) */
+
+const CITATIONS = {
+  gatecheck: `@misc{panda2026gatecheck,
+  author       = {Panda, Swosti},
+  title        = {{GateCheck, BirthCheck and the Identity Ladder: Factory-Gate Identity Integrity and Component Birth-Record Reconciliation Framework (v1.0)}},
+  year         = {2026},
+  month        = oct,
+  howpublished = {Open Specification},
+  url          = {https://swostipanda.github.io/#gatecheck},
+  note         = {ORCID: 0009-0008-3947-4437. CC BY 4.0}
+}`,
+  storenode: `@misc{panda2026storenode,
+  author       = {Panda, Swosti},
+  title        = {{StoreNode Reference Architecture, TimeSplit Time-Phased Channel Segmentation, and Launch Promising Playbook (v1.0)}},
+  year         = {2026},
+  month        = oct,
+  howpublished = {Open Specification},
+  url          = {https://swostipanda.github.io/#storenode},
+  note         = {ORCID: 0009-0008-3947-4437. CC BY 4.0}
+}`,
+  adoa: `@misc{panda2026adoa,
+  author       = {Panda, Swosti},
+  title        = {{Agent Delegation-of-Authority (A-DoA) Framework and Autonomy Tiers T0--T3 for Autonomous AI in Operations (v1.0)}},
+  year         = {2026},
+  month        = oct,
+  howpublished = {Open Specification, first presented at IEEE TEMS Santa Clara Valley Chapter (Dec 3, 2026)},
+  url          = {https://swostipanda.github.io/#adoa},
+  note         = {ORCID: 0009-0008-3947-4437. CC BY 4.0}
+}`
+};
+
+const LADDER_QUESTIONS = [
+  "1. Master-data declaration sent to CMs before build?",
+  "2. Identifier format validated at shipment creation?",
+  "3. IMEI Luhn / check-digit verified at factory gate?",
+  "4. Intra-shipment duplicate serials blocked?",
+  "5. Cross-shipment registry duplicates blocked?",
+  "6. Multi-unit kit child counts validated against BOM?",
+  "7. Non-conforming shipments rejected before departure?",
+  "8. Rejection reasons line-level & machine-readable?",
+  "9. Single unit lifecycle record opened at creation?",
+  "10. Warranty & carrier systems read that single record?",
+  "11. NCU / quarantine lifecycle states modeled?",
+  "12. Authorized repair updates the same unit record?",
+  "13. Serialized components bound at factory birth (BC-01)?",
+  "14. Field/RMA scans reconciled vs. birth record (BC-02/03)?",
+  "15. Per-unit audit / DPP pack exportable within 24h?"
+];
+
+const ADOA_QUESTIONS = [
+  "1. Action classes tiered independently (T0–T3)?",
+  "2. Monetary, scope & frequency limits enforced in runtime?",
+  "3. Pre-conditions (3-way match / GateCheck) verified pre-action?",
+  "4. Immutable decision record written for every action?",
+  "5. Model, prompt, tool & policy versions logged per action?",
+  "6. Above-threshold actions routed to human approval?",
+  "7. Automatic tier downgrade on error/drift spike?",
+  "8. Automatic tier downgrade on model/prompt change?",
+  "9. Named human control owner assigned (not team inbox)?",
+  "10. Kill switch & quarterly audit sampling operational?"
+];
+
+function showToast(msg) {
+  const el = document.getElementById("toast");
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add("visible");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => el.classList.remove("visible"), 3200);
+}
+
+function copyCitation(key) {
+  const text = CITATIONS[key];
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    showToast("Copied BibTeX citation to clipboard");
+  });
+}
+
+function initLadderCalculator() {
+  const grid = document.getElementById("ladder-questions-grid");
+  if (!grid) return;
+  grid.innerHTML = LADDER_QUESTIONS.map((q, idx) => `
+    <div class="calc-item">
+      <span>${q}</span>
+      <select data-ladder-idx="${idx}" aria-label="${q}">
+        <option value="0">0 · No</option>
+        <option value="1">1 · Partial</option>
+        <option value="2">2 · Yes</option>
+      </select>
+    </div>
+  `).join("");
+
+  grid.querySelectorAll("select").forEach((sel) => {
+    sel.addEventListener("change", updateLadderScore);
+  });
+}
+
+function updateLadderScore() {
+  const selects = document.querySelectorAll("[data-ladder-idx]");
+  let total = 0;
+  selects.forEach((s) => {
+    total += parseInt(s.value, 10) || 0;
+  });
+  let level = "Level 0 (Batch)";
+  if (total >= 26) level = "Level 4 (Genealogy-Verified & DPP-Ready)";
+  else if (total >= 19) level = "Level 3 (Lifecycle-Continuous)";
+  else if (total >= 11) level = "Level 2 (Gate-Validated)";
+  else if (total >= 5) level = "Level 1 (Receipt-Checked)";
+
+  const pill = document.getElementById("ladder-score-display");
+  if (pill) {
+    pill.textContent = `Score: ${total} / 30 · ${level}`;
+  }
+  window.__lastLadderScore = `${total}/30 (${level})`;
+}
+
+function initAdoaCalculator() {
+  const grid = document.getElementById("adoa-questions-grid");
+  if (!grid) return;
+  grid.innerHTML = ADOA_QUESTIONS.map((q, idx) => `
+    <div class="calc-item">
+      <span>${q}</span>
+      <select data-adoa-idx="${idx}" aria-label="${q}">
+        <option value="0">0 · No</option>
+        <option value="1">1 · Partial</option>
+        <option value="2">2 · Runtime Enforced</option>
+      </select>
+    </div>
+  `).join("");
+
+  grid.querySelectorAll("select").forEach((sel) => {
+    sel.addEventListener("change", updateAdoaScore);
+  });
+}
+
+function updateAdoaScore() {
+  const selects = document.querySelectorAll("[data-adoa-idx]");
+  let total = 0;
+  selects.forEach((s) => {
+    total += parseInt(s.value, 10) || 0;
+  });
+  let tier = "T0 (Observe & Recommend Only)";
+  if (total >= 17) tier = "T2 / T3 (Act Within Limits / Act With Audit)";
+  else if (total >= 12) tier = "T1 (Act & Notify)";
+
+  const pill = document.getElementById("adoa-score-display");
+  if (pill) {
+    pill.textContent = `Readiness: ${total} / 20 · Max Recommended Tier: ${tier}`;
+  }
+  window.__lastAdoaScore = `${total}/20 (${tier})`;
+}
+
+function prefillAdoption(frameworkName) {
+  const select = document.getElementById("adopt-framework");
+  const notes = document.getElementById("adopt-notes");
+  if (select) select.value = frameworkName;
+  if (notes) {
+    const scoreInfo = frameworkName.includes("GateCheck")
+      ? (window.__lastLadderScore ? `Self-Assessment Score: ${window.__lastLadderScore}. ` : "")
+      : (window.__lastAdoaScore ? `A-DoA Readiness Score: ${window.__lastAdoaScore}. ` : "");
+    if (scoreInfo && !notes.value.includes("Score:")) {
+      notes.value = scoreInfo + notes.value;
+    }
+  }
+}
+
+function handleAdoptionSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById("adopt-name").value.trim();
+  const org = document.getElementById("adopt-org").value.trim();
+  const fw = document.getElementById("adopt-framework").value;
+  const type = document.getElementById("adopt-type").value;
+  const notes = document.getElementById("adopt-notes").value.trim();
+  const date = new Date().toISOString().slice(0, 10);
+
+  const title = encodeURIComponent(`[Adoption Register] ${fw} — ${org}`);
+  const body = encodeURIComponent(
+    `### Organizational Adoption / Benchmark Record\n` +
+    `- **Date:** ${date}\n` +
+    `- **Name & Title:** ${name}\n` +
+    `- **Organization:** ${org}\n` +
+    `- **Framework:** ${fw}\n` +
+    `- **Engagement Type:** ${type}\n` +
+    `- **Summary of Use / Benchmark:** ${notes}\n`
+  );
+
+  // Open GitHub Issue pre-filled on swostipanda/swostipanda.github.io so every external submission is automatically dated and logged
+  const ghUrl = `https://github.com/swostipanda/swostipanda.github.io/issues/new?title=${title}&body=${body}`;
+  window.open(ghUrl, "_blank", "noopener");
+  showToast("Opened pre-filled GitHub Adoption Record");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initLadderCalculator();
+  initAdoaCalculator();
+});
+
+</script>
+</body>
+</html>
