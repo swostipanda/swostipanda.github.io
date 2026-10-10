@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://swostipanda.github.io/schemas/gatecheck-birthcheck-genealogy.schema.json",
+  "title": "GateCheck & BirthCheck Device Genealogy Record v1.0",
+  "description": "Vendor-neutral schema for factory-gate device identity validation, multi-unit kit hierarchies, lifecycle states, and component-level birth-record reconciliation (Swosti Panda, 2026, CC BY 4.0).",
+  "type": "object",
+  "required": ["unit_id", "identifiers", "product", "birth", "components", "lifecycle", "policy_version"],
+  "properties": {
+    "unit_id": {
+      "type": "string",
+      "description": "Primary immutable serialized unit identifier (SGTIN, serial number, or primary IMEI)."
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "value", "source", "since"],
+        "properties": {
+          "type": { "type": "string", "enum": ["SERIAL", "IMEI", "IMEI2", "EID", "SGTIN", "MAC"] },
+          "value": { "type": "string" },
+          "source": { "type": "string" },
+          "since": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "product": {
+      "type": "object",
+      "required": ["gtin", "sku", "family", "is_kit"],
+      "properties": {
+        "gtin": { "type": "string" },
+        "sku": { "type": "string" },
+        "family": { "type": "string" },
+        "is_kit": { "type": "boolean" },
+        "declared_child_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "birth": {
+      "type": "object",
+      "required": ["manufacturer_site", "line", "timestamp", "shipment_event_id"],
+      "properties": {
+        "manufacturer_site": { "type": "string" },
+        "line": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "build_phase": { "type": "string" },
+        "shipment_event_id": { "type": "string" }
+      }
+    },
+    "components": {
+      "type": "array",
+      "description": "Serialized sub-assemblies bound to the unit at factory birth or authorized repair (BirthCheck BC-01..BC-03).",
+      "items": {
+        "type": "object",
+        "required": ["component_type", "identifier", "paired_at"],
+        "properties": {
+          "component_type": {
+            "type": "string",
+            "enum": ["SOC", "MLB", "DISPLAY", "BATTERY", "SECURE_ELEMENT", "CAMERA_MODULE", "ENCLOSURE"]
+          },
+          "identifier": { "type": "string" },
+          "supplier_code": { "type": "string" },
+          "paired_at": { "type": "string", "format": "date-time" },
+          "replaced_at": { "type": ["string", "null"], "format": "date-time" },
+          "replaced_by_event_id": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "kit": {
+      "type": "object",
+      "properties": {
+        "parent_id": { "type": ["string", "null"] },
+        "children": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "lifecycle": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state", "timestamp", "source_system"],
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "GATE_VALIDATED",
+              "IN_TRANSIT",
+              "RECEIVED",
+              "ALLOCATED",
+              "SOLD",
+              "ACTIVATED",
+              "RMA_INTAKE",
+              "NCU_QUARANTINED",
+              "SUSPECT_COMPONENT_MISMATCH",
+              "CLONED_OR_HARVESTED",
+              "AUTHORIZED_REPAIR",
+              "SCRAPPED"
+            ]
+          },
+          "timestamp": { "type": "string", "format": "date-time" },
+          "source_system": { "type": "string" },
+          "actor": { "type": "string" },
+          "reference": { "type": "string" }
+        }
+      }
+    },
+    "policy_version": { "type": "string" }
+  }
+}
