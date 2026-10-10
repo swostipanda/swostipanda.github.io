@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://swostipanda.github.io/schemas/adoa-decision-record.schema.json",
+  "title": "Agent Delegation-of-Authority (A-DoA) Decision Record v1.0",
+  "description": "Audit-grade decision record schema for autonomous AI agent actions across Autonomy Tiers T0-T3 (Swosti Panda, 2026, CC BY 4.0).",
+  "type": "object",
+  "required": [
+    "record_id",
+    "agent_id",
+    "agent_version",
+    "action_class",
+    "tier_at_time",
+    "owner",
+    "timestamp",
+    "inputs_consulted",
+    "decision",
+    "limits_checked"
+  ],
+  "properties": {
+    "record_id": { "type": "string" },
+    "agent_id": { "type": "string" },
+    "agent_version": {
+      "type": "object",
+      "required": ["model", "prompt_hash", "tools_version", "policy_version"],
+      "properties": {
+        "model": { "type": "string" },
+        "prompt_hash": { "type": "string" },
+        "tools_version": { "type": "string" },
+        "policy_version": { "type": "string" }
+      }
+    },
+    "action_class": { "type": "string" },
+    "tier_at_time": {
+      "type": "string",
+      "enum": ["T0_OBSERVE", "T1_ACT_AND_NOTIFY", "T2_ACT_WITHIN_LIMITS", "T3_ACT_ALONE_WITH_AUDIT"]
+    },
+    "owner": {
+      "type": "string",
+      "description": "Named accountable human control owner (role + identifier, never a generic team inbox)."
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "inputs_consulted": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "reference_id"],
+        "properties": {
+          "source": { "type": "string" },
+          "reference_id": { "type": "string" },
+          "snapshot_hash": { "type": "string" }
+        }
+      }
+    },
+    "options_considered": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "decision": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "limits_checked": {
+      "type": "object",
+      "required": ["monetary_limit_ok", "scope_limit_ok", "frequency_limit_ok", "result"],
+      "properties": {
+        "monetary_limit_ok": { "type": "boolean" },
+        "scope_limit_ok": { "type": "boolean" },
+        "frequency_limit_ok": { "type": "boolean" },
+        "result": { "type": "string", "enum": ["PASS", "ESCALATED_TO_HUMAN", "SUSPENDED"] }
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "approver": { "type": "string" },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "transaction_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}
