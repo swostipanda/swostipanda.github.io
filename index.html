@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swosti Panda — Systems That Act, Products That Prove | Supply-Chain &amp; Agentic AI Frameworks</title>
-  <meta name="description" content="Open specifications and reference frameworks by Swosti Panda: GateCheck &amp; BirthCheck (Factory-Gate Identity Integrity &amp; Component Genealogy), StoreNode &amp; TimeSplit (Omnichannel Promising), and A-DoA (Agent Delegation-of-Authority)." />
+  <title>Swosti Panda, SMIEEE — Systems That Act, Products That Prove | Supply-Chain &amp; Agentic AI Frameworks</title>
+  <meta name="description" content="Open specifications, reference implementations, and operational control schemas by Swosti Panda, SMIEEE: GateCheck &amp; BirthCheck (Factory-Gate Identity Integrity &amp; Component Genealogy), StoreNode &amp; TimeSplit (Omnichannel Promising), and A-DoA (Agent Delegation-of-Authority)." />
   <link rel="canonical" href="https://swostipanda.github.io/" />
-  <meta property="og:title" content="Swosti Panda — Supply-Chain &amp; Agentic Operations Systems Hub" />
-  <meta property="og:description" content="Canonical specifications, JSON schemas, and self-assessment scorecards for GateCheck, BirthCheck, Identity Ladder, StoreNode, TimeSplit, and A-DoA." />
+  <meta property="og:title" content="Swosti Panda, SMIEEE — Supply-Chain &amp; Agentic Operations Systems Hub" />
+  <meta property="og:description" content="Canonical specifications, JSON schemas, upstream standards integrations (GS1 openEPCIS, FINOS AIGF, EU open-dpp, frePPLe, ERPNext), and self-assessment scorecards for GateCheck, BirthCheck, StoreNode, TimeSplit, and A-DoA." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://swostipanda.github.io/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,6 +31,9 @@
   --accent-primary-hover: #0a3540;
   --accent-warm: #8c3b2b;
   --accent-ochre: #9a6b1f;
+  --accent-green: #1b6535;
+  --accent-green-bg: #eaf5ee;
+  --accent-blue-bg: #eef4f8;
   --border-hairline: #e2dfd7;
   --border-strong: #c8c3b8;
   --shadow-Rest: 0 1px 2px rgba(20, 24, 31, 0.04), 0 4px 12px rgba(20, 24, 31, 0.03);
@@ -96,6 +99,7 @@ body {
   display: flex;
   gap: 1.15rem;
   align-items: center;
+  flex-wrap: wrap;
   font-family: var(--font-mono);
   font-size: 0.74rem;
 }
@@ -138,14 +142,14 @@ body {
 }
 
 .brand-role {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   color: var(--text-muted);
   margin-top: 0.15rem;
 }
 
 .main-nav {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.3rem;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -153,9 +157,9 @@ body {
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 500;
-  padding: 0.42rem 0.75rem;
+  padding: 0.4rem 0.68rem;
   border-radius: var(--radius-sm);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -169,7 +173,7 @@ body {
   background-color: var(--accent-primary);
   color: #ffffff !important;
   font-weight: 600;
-  margin-left: 0.25rem;
+  margin-left: 0.2rem;
 }
 
 .nav-link-cta:hover {
@@ -212,7 +216,7 @@ body {
 .hero-lead {
   font-size: 1.08rem;
   color: var(--text-secondary);
-  max-width: 820px;
+  max-width: 850px;
   margin: 0 0 1.75rem;
   line-height: 1.65;
 }
@@ -262,6 +266,29 @@ body {
 .btn-sm {
   font-size: 0.78rem;
   padding: 0.35rem 0.7rem;
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.14rem 0.48rem;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.status-merged {
+  background-color: var(--accent-green-bg);
+  color: var(--accent-green);
+  border: 1px solid #b7dfc5;
+}
+
+.status-approved {
+  background-color: var(--accent-blue-bg);
+  color: var(--accent-primary);
+  border: 1px solid #bdd4e2;
 }
 
 /* 3 Pillar Cards Overview */
@@ -427,6 +454,35 @@ body {
   min-width: 240px;
 }
 
+/* Upstream Adoption Callout inside each framework */
+.adoption-callout {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin: 1.25rem 0;
+  box-shadow: var(--shadow-Rest);
+}
+
+.adoption-callout h4 {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  margin: 0 0 0.55rem;
+  color: var(--text-primary);
+}
+
+.adoption-callout ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+}
+
+.adoption-callout li {
+  margin-bottom: 0.4rem;
+}
+
 /* Data & Specification Tables */
 .table-wrap {
   overflow-x: auto;
@@ -504,7 +560,7 @@ table.spec-table code {
 }
 
 .panel li {
-  margin-bottom: 0.42rem;
+  margin-bottom: 0.45rem;
 }
 
 /* Interactive Self-Assessment Calculator */
@@ -671,16 +727,32 @@ table.spec-table code {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Swosti Panda",
-    "jobTitle": "Business Systems Analyst, Supply-Chain Systems Architecture",
+    "honorificSuffix": "SMIEEE",
+    "jobTitle": "Business Systems Analyst (Incoming Senior Business Systems Analyst, Nov 2026), Supply-Chain Systems Architecture",
     "worksFor": {
       "@type": "Organization",
       "name": "Google LLC (Devices & Services)"
     },
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "IEEE Technology and Engineering Management Society (TEMS) Santa Clara Valley Chapter — Board of Directors"
+      },
+      {
+        "@type": "Organization",
+        "name": "West Valley College Computer Science & Engineering (CIST) Industry Advisory Board"
+      },
+      {
+        "@type": "Organization",
+        "name": "INFORMS Franz Edelman Award Selection Committee (Observer, 2026–2027)"
+      }
+    ],
     "url": "https://swostipanda.github.io/",
     "sameAs": [
       "https://github.com/swostipanda",
       "https://scholar.google.com/citations?user=uuxtl9YAAAAJ",
-      "https://orcid.org/0009-0008-3947-4437"
+      "https://orcid.org/0009-0008-3947-4437",
+      "https://www.webofscience.com/wos/author/record/QQA-6174-2026"
     ]
   }
   </script>
@@ -690,9 +762,10 @@ table.spec-table code {
   <!-- Top Specification Bar -->
   <div class="spec-topbar">
     <div class="spec-topbar-inner">
-      <span>Open Reference Specifications &amp; Operational Control Schemas · CC BY 4.0 / Apache 2.0</span>
+      <span>Open Reference Specifications, Upstream Standards &amp; Operational Control Schemas · CC BY 4.0 / Apache 2.0</span>
       <div class="spec-topbar-links">
         <a href="https://orcid.org/0009-0008-3947-4437" target="_blank" rel="noopener">ORCID: 0009-0008-3947-4437</a>
+        <a href="https://www.webofscience.com/wos/author/record/QQA-6174-2026" target="_blank" rel="noopener">WoS: QQA-6174-2026</a>
         <a href="https://scholar.google.com/citations?user=uuxtl9YAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://github.com/swostipanda" target="_blank" rel="noopener">github.com/swostipanda</a>
       </div>
@@ -704,9 +777,10 @@ table.spec-table code {
     <div class="site-header-inner">
       <a href="#top" class="brand-block">
         <span class="brand-name">Swosti Panda, SMIEEE</span>
-        <span class="brand-role">Supply-Chain &amp; Operations Systems Architecture · Board Member, IEEE TEMS SCV</span>
+        <span class="brand-role">Supply-Chain &amp; Agentic Operations Architecture · Board Member, IEEE TEMS SCV · Advisory Board, WVC CIST</span>
       </a>
       <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#adoption-evidence" class="nav-link">Standards &amp; Adoption</a>
         <a href="#gatecheck" class="nav-link">GateCheck &amp; BirthCheck</a>
         <a href="#storenode" class="nav-link">StoreNode &amp; TimeSplit</a>
         <a href="#adoa" class="nav-link">A-DoA Framework</a>
@@ -721,19 +795,19 @@ table.spec-table code {
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <div class="hero-kicker">Open Research &amp; Practitioner Canon · v1.0 (2026)</div>
+        <div class="hero-kicker">Open Research &amp; Practitioner Canon · v1.1 (Updated October 2026)</div>
         <h1 class="hero-title">Systems That Act, Products That Prove.</h1>
         <p class="hero-lead">
-          Vendor-neutral architectures, control matrices, and open schemas for three foundational problems in modern physical-product operations:
+          Vendor-neutral architectures, control matrices, and open JSON schemas for three foundational problems in modern physical-product operations:
           <strong>(1) enforcing device identity and component genealogy from the factory gate to repair</strong>,
           <strong>(2) modeling physical stores as planned supply nodes with time-phased channel segmentation</strong>, and
-          <strong>(3) governing autonomous AI agents through delegation-of-authority controls</strong>.
+          <strong>(3) governing autonomous AI agents through delegation-of-authority controls and deterministic circuit breakers</strong>.
         </p>
         <div class="hero-meta-bar">
-          <a href="#gatecheck" class="btn btn-primary">Explore the 3 Frameworks</a>
-          <a href="#adoption-register" class="btn btn-secondary">Register Organizational Adoption</a>
-          <a href="schemas/gatecheck-birthcheck-genealogy.schema.json" class="btn btn-secondary" download>Download Genealogy JSON Schema</a>
-          <a href="schemas/adoa-decision-record.schema.json" class="btn btn-secondary" download>Download A-DoA JSON Schema</a>
+          <a href="#adoption-evidence" class="btn btn-primary">View Standards &amp; Upstream Adoption</a>
+          <a href="#gatecheck" class="btn btn-secondary">Explore the 3 Specifications</a>
+          <a href="schemas/gatecheck-birthcheck-genealogy.schema.json" class="btn btn-secondary" download>Download Genealogy JSON Schema (v1.0)</a>
+          <a href="schemas/adoa-decision-record.schema.json" class="btn btn-secondary" download>Download A-DoA Decision Schema (v1.1.0)</a>
         </div>
       </div>
     </section>
@@ -758,10 +832,10 @@ table.spec-table code {
                 Move device-identity validation (serial, IMEI, multi-unit kit hierarchy) to the contract-manufacturer shipment event, carry one lifecycle record through repair, and reconcile component birth records against field telemetry to detect counterfeit and "Franken-device" warranty abuse.
               </p>
               <div class="pillar-tags">
-                <span class="tag">GS1 EPCIS 2.0</span>
-                <span class="tag">IPC-1782</span>
-                <span class="tag">AGMA Brand Protection</span>
-                <span class="tag">EU Digital Product Passport</span>
+                <span class="tag">GS1 openEPCIS (Merged PR #9)</span>
+                <span class="tag">EU open-dpp (#1039 / #1072 / #1078)</span>
+                <span class="tag">AGMA White Paper</span>
+                <span class="tag">IPC-1782 Proposal</span>
               </div>
             </div>
             <div class="pillar-actions">
@@ -780,10 +854,10 @@ table.spec-table code {
                 Publish physical store allocations into the enterprise order-promising engine via standard replenishment-order constructs (eliminating mirrored-ATP double-selling) and apply time-phased channel segmentation to in-transit supply so stores can capture launch pre-orders.
               </p>
               <div class="pillar-tags">
-                <span class="tag">Enterprise ATP</span>
-                <span class="tag">BOPIS Contention</span>
-                <span class="tag">In-Transit Segmentation</span>
-                <span class="tag">NPI Launch Control</span>
+                <span class="tag">frePPLe APS (#776)</span>
+                <span class="tag">ERPNext (#60601 Patch)</span>
+                <span class="tag">Enterprise ATP &amp; BOPIS</span>
+                <span class="tag">INFORMS JRING Talk</span>
               </div>
             </div>
             <div class="pillar-actions">
@@ -799,13 +873,13 @@ table.spec-table code {
               <span class="pillar-code">OC-3 · AGENTIC AI GOVERNANCE</span>
               <h3>A-DoA Framework &amp; Autonomy Tiers T0–T3</h3>
               <p>
-                Treat every autonomous AI agent as a formal delegate inside the enterprise control system — authority granted per action class across Tiers T0–T3 (<em>Delegate</em>), constrained by automatic downgrade triggers (<em>Bound</em>), evidenced by an immutable decision record (<em>Record</em>), and assigned to a named human control owner (<em>Own</em>).
+                Treat every autonomous AI agent as a formal delegate inside the enterprise control system — authority granted per action class across Tiers T0–T3 (<em>Delegate</em>), constrained by runtime suspension triggers ST-01..ST-05 (<em>Bound</em>), evidenced by an RFC 8785 digest-bound decision record (<em>Record</em>), and assigned to a named human control owner (<em>Own</em>).
               </p>
               <div class="pillar-tags">
-                <span class="tag">COSO / SOX Controls</span>
-                <span class="tag">NIST AI RMF</span>
-                <span class="tag">ISO/IEC 42001</span>
-                <span class="tag">IEEE 2863 &amp; 3119</span>
+                <span class="tag">FINOS AIGF mi-24 (Approved PR #412)</span>
+                <span class="tag">Canada OSFI &amp; IETF Crosswalk</span>
+                <span class="tag">WVC CIST Curriculum</span>
+                <span class="tag">COSO / NIST AI RMF / ISO 42001</span>
               </div>
             </div>
             <div class="pillar-actions">
@@ -814,6 +888,110 @@ table.spec-table code {
               <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('adoa')">Copy BibTeX</button>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================
+         STANDARDS, OPEN-SOURCE & CURRICULUM ADOPTION LEDGER
+         ================================================================== -->
+    <section id="adoption-evidence" class="framework-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">Verified External Implementations, Standards &amp; Curriculum</span>
+            <h2 class="section-title">Independent Standards, Open-Source &amp; Academic Adoption</h2>
+          </div>
+        </div>
+        <p style="color: var(--text-secondary); margin: 0 0 1rem; font-size: 0.94rem;">
+          Rules, schemas, and control primitives from <strong>GateCheck &amp; BirthCheck</strong>, <strong>StoreNode &amp; TimeSplit</strong>, and the <strong>A-DoA Framework</strong> have been merged into or adopted by upstream open-source repositories, financial and supply-chain standards bodies, anti-counterfeiting industry coalitions, and accredited higher-education curricula:
+        </p>
+
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pillar</th>
+                <th>Institution / Repository / Standard</th>
+                <th>Contribution &amp; Control Primitive</th>
+                <th>Verification &amp; Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>OC-1</code></td>
+                <td><strong>GS1 Open-Source Reference Implementation (<code>openEPCIS</code>)</strong></td>
+                <td>Deterministic intra-event duplicate EPC detection (<code>GateCheck Rule FG-03</code>) across <code>epcList</code>, <code>childEPCs</code>, <code>inputEPCList</code>, and <code>outputEPCList</code> in <code>openepcis-document-validation-service</code> + schema test reviews (<a href="https://github.com/openepcis/openepcis-test-resources/pull/12" target="_blank" rel="noopener">PR #12</a>, <a href="https://github.com/openepcis/openepcis-test-resources/pull/15" target="_blank" rel="noopener">PR #15</a>).</td>
+                <td>
+                  <span class="status-pill status-merged">MERGED TO MAIN</span><br />
+                  <a href="https://github.com/openepcis/openepcis-document-validation-service/issues/8" target="_blank" rel="noopener">Issue #8</a> · <a href="https://github.com/openepcis/openepcis-document-validation-service/pull/9" target="_blank" rel="noopener">PR #9</a> (Merged Oct 19, 2026)
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-1</code></td>
+                <td><strong>European Digital Product Passport (<code>open-dpp</code>, ESPR / CIRPASS-2)</strong></td>
+                <td><code>verifyHierarchyIntegrity()</code> in <code>ProductPassportService</code> enforcing <code>FG-03</code>, <code>FG-05/FG-06</code>, and <code>BC-01/BC-03</code> (<a href="https://github.com/open-dpp/open-dpp/issues/1039" target="_blank" rel="noopener">Issue #1039</a>, <a href="https://github.com/open-dpp/open-dpp/pull/1072" target="_blank" rel="noopener">PR #1072</a>) + peer security review of <a href="https://github.com/open-dpp/open-dpp/pull/1078" target="_blank" rel="noopener">PR #1078</a>.</td>
+                <td>
+                  <span class="status-pill status-merged">VALIDATED &amp; SHIPPED v1091</span><br />
+                  Maintainer validated (#1039); <a href="https://github.com/open-dpp/open-dpp/pull/1078" target="_blank" rel="noopener">PR #1078</a> merged Oct 23, 2026
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-1</code></td>
+                <td><strong>Alliance for Gray Market and Counterfeit Abatement (AGMA)</strong></td>
+                <td>Co-authored 5-page industry white paper &amp; 15-point member readiness scorecard with <strong>Minsi Su</strong> (<em>Board Director, AGMA</em>): <em>"Turning EU Digital Product Passports (DPP) Into a Brand Protection Shield"</em>.</td>
+                <td>
+                  <span class="status-pill status-approved">COALITION WHITE PAPER</span><br />
+                  AGMA Publication Pipeline &amp; Summer 2027 Conference Session
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-1</code></td>
+                <td><strong>IPC-1782 Traceability Standard (Task Group 2-19a)</strong></td>
+                <td>Proposed factory-gate shipment-event validation (<code>FG-01..FG-08</code>) and component birth-tuple reconciliation (<code>BC-01..BC-04</code>) for the next revision of <em>IPC-1782 Standard for Manufacturing and Supply Chain Traceability</em>.</td>
+                <td>
+                  <span class="status-pill status-approved">SUBMITTED TO TASK GROUP</span><br />
+                  Submitted to IPC Task Group 2-19a (Oct 2026)
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-2</code></td>
+                <td><strong>frePPLe Open-Source Advanced Planning &amp; Scheduling (APS)</strong></td>
+                <td><code>StoreNode &amp; TimeSplit</code> architecture for time-phased channel segmentation and walk-in floor protection in retail store nodes (<a href="https://github.com/frePPLe/frepple/issues/776" target="_blank" rel="noopener">Issue #776</a>).</td>
+                <td>
+                  <span class="status-pill status-approved">MAINTAINER VALIDATED</span><br />
+                  Validated in writing by Founder &amp; CEO Johan De Taeye (<a href="https://github.com/frePPLe/frepple/issues/776" target="_blank" rel="noopener">#776</a>, Oct 13, 2026)
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-2</code></td>
+                <td><strong>ERPNext (<code>frappe/erpnext</code>)</strong></td>
+                <td>Reference implementation enforcing <code>walk_in_protection_floor_qty</code> and <code>daily_bopis_pick_capacity_qty</code> in <code>POS Settings</code> and Webshop promising (<a href="https://github.com/frappe/erpnext/issues/60601" target="_blank" rel="noopener">Issue #60601</a>, <a href="https://github.com/frappe/erpnext/compare/develop...swostipanda:erpnext:patch-1" target="_blank" rel="noopener">patch-1</a>).</td>
+                <td>
+                  <span class="status-pill status-approved">REFERENCE PATCH</span><br />
+                  <a href="https://github.com/frappe/erpnext/issues/60601" target="_blank" rel="noopener">Issue #60601</a> &amp; <a href="https://github.com/frappe/erpnext/compare/develop...swostipanda:erpnext:patch-1" target="_blank" rel="noopener">Verified Patch</a>
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-3</code></td>
+                <td><strong>Linux Foundation / FINOS AI Governance Framework (<code>mi-24</code>)</strong></td>
+                <td>Authored <a href="https://github.com/finos/ai-governance-framework/issues/409" target="_blank" rel="noopener">Issue #409</a> &amp; <a href="https://github.com/finos/ai-governance-framework/pull/412" target="_blank" rel="noopener">PR #412</a> (<em>Action-Level Authority, Graded Autonomy Tiers &amp; Runtime Circuit Breakers</em> for Mitigation <code>mi-24</code>), presented at the Oct 21, 2026 FINOS AIGF Working Group (<a href="https://github.com/finos/ai-governance-framework/issues/416" target="_blank" rel="noopener">#416</a>), cross-mapped to <strong>Canada OSFI July 2026 Agentic AI Bulletin (<a href="https://github.com/finos/ai-governance-framework/pull/418" target="_blank" rel="noopener">PR #418</a>)</strong>, <strong>US Financial Regulations (<a href="https://github.com/finos/ai-governance-framework/pull/374" target="_blank" rel="noopener">PR #374</a>)</strong>, and four <strong>IETF Internet-Drafts</strong> + 12 completed FINOS PR/issue reviews.</td>
+                <td>
+                  <span class="status-pill status-merged">APPROVED BY MAINTAINER</span><br />
+                  <a href="https://github.com/finos/ai-governance-framework/pull/412" target="_blank" rel="noopener">PR #412</a> Formally <code>APPROVED</code> by Dr. Sankalp Gilda (Oct 21, 2026)
+                </td>
+              </tr>
+              <tr>
+                <td><code>OC-3</code></td>
+                <td><strong>West Valley College — Computer Science &amp; Engineering (<code>CIST</code>) Curriculum</strong></td>
+                <td>Formal adoption of the <strong>A-DoA Framework</strong> (Autonomy Tiers <code>T0–T3</code>, Runtime Circuit Breakers <code>ST-01..ST-05</code>, and Decision Record Schema) into the NSF ATE-supported <em>AI Systems Technician Certificate</em> (<code>CIST 020–022</code>).</td>
+                <td>
+                  <span class="status-pill status-merged">APPROVED BY ADVISORY BOARD</span><br />
+                  Unanimous Industry Advisory Board Vote (Oct 19, 2026)
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -842,6 +1020,15 @@ table.spec-table code {
               <a href="schemas/gatecheck-birthcheck-genealogy.schema.json" class="btn btn-primary btn-sm" download>JSON Schema (.json)</a>
             </div>
           </div>
+        </div>
+
+        <div class="adoption-callout">
+          <h4>Upstream Standards &amp; Open-Source Implementations (GateCheck &amp; BirthCheck)</h4>
+          <ul>
+            <li><strong>GS1 <code>openEPCIS</code> Production Validation Service (<span class="status-pill status-merged">MERGED</span>):</strong> <a href="https://github.com/openepcis/openepcis-document-validation-service/issues/8" target="_blank" rel="noopener">Issue #8</a> and <a href="https://github.com/openepcis/openepcis-document-validation-service/pull/9" target="_blank" rel="noopener">PR #9</a> merged into <code>main</code> on Oct 19, 2026 — enforces <code>GateCheck Rule FG-03</code> (intra-event duplicate EPC detection across <code>epcList</code>, <code>childEPCs</code>, <code>inputEPCList</code>, and <code>outputEPCList</code> in <code>ObjectEvent</code>, <code>AggregationEvent</code>, <code>TransactionEvent</code>, and <code>TransformationEvent</code>). Also reviewed upstream EPCIS 2.0 JSON Schema test suites (<a href="https://github.com/openepcis/openepcis-test-resources/pull/12" target="_blank" rel="noopener">PR #12</a>, <a href="https://github.com/openepcis/openepcis-test-resources/pull/15" target="_blank" rel="noopener">PR #15</a>).</li>
+            <li><strong>European Digital Product Passport (<code>open-dpp</code>):</strong> <a href="https://github.com/open-dpp/open-dpp/issues/1039" target="_blank" rel="noopener">Issue #1039</a> (validated by core maintainer Henri Burau) and <a href="https://github.com/open-dpp/open-dpp/pull/1072" target="_blank" rel="noopener">PR #1072</a> implementing <code>verifyHierarchyIntegrity()</code> for ESPR / CIRPASS-2 Digital Product Passports, plus approved security &amp; lifecycle review of <a href="https://github.com/open-dpp/open-dpp/pull/1078" target="_blank" rel="noopener">PR #1078</a> (merged &amp; shipped in <code>v1091</code>, Oct 23, 2026).</li>
+            <li><strong>AGMA Brand-Protection Coalition &amp; IPC-1782 Standard:</strong> Co-authored the AGMA white paper <em>"Turning EU Digital Product Passports (DPP) Into a Brand Protection Shield"</em> with AGMA Board Director Minsi Su (Oct 2026) and submitted the <code>GateCheck / BirthCheck</code> traceability proposal to <strong>IPC Task Group 2-19a (IPC-1782)</strong>.</li>
+          </ul>
         </div>
 
         <div class="two-col">
@@ -901,7 +1088,7 @@ table.spec-table code {
                 <td><strong>Intra-Shipment Uniqueness</strong> — zero duplicate identifiers across lines/cartons</td>
                 <td>All identifiers in shipment payload</td>
                 <td>Reject entire shipment document</td>
-                <td>Document-level EPC uniqueness</td>
+                <td>Document-level EPC uniqueness (<a href="https://github.com/openepcis/openepcis-document-validation-service/pull/9" target="_blank" rel="noopener">openEPCIS PR #9</a>)</td>
               </tr>
               <tr>
                 <td><code>FG-04</code></td>
@@ -1038,6 +1225,15 @@ table.spec-table code {
           </div>
         </div>
 
+        <div class="adoption-callout">
+          <h4>Upstream Open-Source APS &amp; ERP Implementations (StoreNode &amp; TimeSplit)</h4>
+          <ul>
+            <li><strong>frePPLe Open-Source Advanced Planning &amp; Scheduling (<span class="status-pill status-approved">VALIDATED BY CEO</span>):</strong> <a href="https://github.com/frePPLe/frepple/issues/776" target="_blank" rel="noopener">Issue #776</a> — validated in writing on Oct 13, 2026 by frePPLe Founder &amp; CEO <strong>Johan De Taeye</strong> (<em>"The dual regime is spot-on. The challenge and solution trigger resonate very well..."</em>).</li>
+            <li><strong>ERPNext Reference Implementation (<span class="status-pill status-approved">PATCH PUBLISHED</span>):</strong> <a href="https://github.com/frappe/erpnext/issues/60601" target="_blank" rel="noopener">Issue #60601</a> and verified reference patch (<a href="https://github.com/frappe/erpnext/compare/develop...swostipanda:erpnext:patch-1" target="_blank" rel="noopener"><code>swostipanda:patch-1</code></a>) adding <code>walk_in_protection_floor_qty</code> and <code>daily_bopis_pick_capacity_qty</code> to <code>POS Settings</code> and Webshop stock-promising logic.</li>
+            <li><strong>INFORMS JRING Invited Speaker Series (October 24, 2026):</strong> Featured in the invited talk <em>"From Sequential Decision Policies to Bounded Production Execution: Multi-Regime Inventory Promising (StoreNode &amp; TimeSplit) and Agent Delegation-of-Authority (A-DoA) in Operations"</em>.</li>
+          </ul>
+        </div>
+
         <div class="two-col">
           <div class="panel">
             <h4>StoreNode + TimeSplit Mechanics</h4>
@@ -1076,9 +1272,9 @@ table.spec-table code {
         <div class="framework-banner">
           <div class="framework-meta-row">
             <span class="section-kicker">Framework Specification 03 · CC BY 4.0</span>
-            <span class="spec-badge">Version 1.0 · First Presented IEEE TEMS-SCV (Dec 3, 2026) · <a href="https://doi.org/10.5281/zenodo.23275115" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275115</a></span>
+            <span class="spec-badge">Spec v1.0 / Schema v1.1.0 · <a href="https://doi.org/10.5281/zenodo.23275115" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275115</a></span>
           </div>
-          <h2 class="section-title">Agent Delegation-of-Authority (A-DoA) &amp; Autonomy Tiers T0–T3</h2>
+          <h2 class="section-title">Agent Delegation-of-Authority (A-DoA), Autonomy Tiers T0–T3 &amp; Circuit Breakers ST-01..ST-05</h2>
           <p style="color: var(--text-secondary); margin: 0.65rem 0 0;">
             <strong>Premise:</strong> Existing AI frameworks (NIST AI RMF, ISO/IEC 42001) govern AI at the organizational level, while internal-control frameworks (COSO, SOX segregation of duties and approval matrices) govern humans and deterministic ERP workflows. <em>A-DoA</em> bridges the two by treating every autonomous AI agent as a formal <strong>delegate</strong> inside the organization's existing control system across four pillars: <strong>Delegate · Bound · Record · Own</strong>.
           </p>
@@ -1089,9 +1285,18 @@ table.spec-table code {
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
               <button type="button" class="btn btn-secondary btn-sm" onclick="copyCitation('adoa')">Copy BibTeX</button>
               <a href="https://doi.org/10.5281/zenodo.23275115" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Zenodo PDF (DOI)</a>
-              <a href="schemas/adoa-decision-record.schema.json" class="btn btn-primary btn-sm" download>Decision Record Schema (.json)</a>
+              <a href="schemas/adoa-decision-record.schema.json" class="btn btn-primary btn-sm" download>Decision Record Schema v1.1.0 (.json)</a>
             </div>
           </div>
+        </div>
+
+        <div class="adoption-callout">
+          <h4>Standards Governance, Regulatory Crosswalks &amp; Curriculum Adoption (A-DoA)</h4>
+          <ul>
+            <li><strong>Linux Foundation / FINOS AI Governance Framework (<code>mi-24</code>, <span class="status-pill status-merged">APPROVED</span>):</strong> Authored <a href="https://github.com/finos/ai-governance-framework/issues/409" target="_blank" rel="noopener">Issue #409</a> and <a href="https://github.com/finos/ai-governance-framework/pull/412" target="_blank" rel="noopener">PR #412</a> (<em>Action-Level Authority, Graded Autonomy Tiers &amp; Runtime Circuit Breakers</em> for Mitigation <code>mi-24</code>), presented at the Oct 21, 2026 FINOS AIGF Working Group session (<a href="https://github.com/finos/ai-governance-framework/issues/416" target="_blank" rel="noopener">#416</a>), and formally <code>APPROVED</code> by FINOS maintainer &amp; IETF WIMSE author <strong>Dr. Sankalp Gilda</strong>.</li>
+            <li><strong>Global Financial Regulatory &amp; IETF Crosswalks:</strong> Cross-mapped to <strong>Canada OSFI's July 2026 Agentic AI Risk Bulletin</strong> (<a href="https://github.com/finos/ai-governance-framework/pull/418" target="_blank" rel="noopener">FINOS PR #418</a>), <strong>US Financial-Sector AI Regulations (SR 11-7 / OCC 2011-12)</strong> (<a href="https://github.com/finos/ai-governance-framework/pull/374" target="_blank" rel="noopener">FINOS PR #374</a>), and four active <strong>IETF Internet-Drafts</strong> (<code>draft-gilda-wimse-Hop-by-Hop-Attestation</code>, <code>draft-gilda-agent-delegation-context</code>, <code>draft-ni-oauth-act-claim-constraints</code>, and <code>draft-rosomakho-oauth-Step-Up-Auth</code>).</li>
+            <li><strong>Accredited Higher-Education Curriculum (<span class="status-pill status-merged">ADOPTED</span>):</strong> Unanimously approved on Oct 19, 2026 by the <strong>West Valley College Computer Science &amp; Engineering (<code>CIST</code>) Industry Advisory Board</strong> for integration into the NSF ATE-supported <em>AI Systems Technician Certificate</em> (<code>CIST 020–022</code>).</li>
+          </ul>
         </div>
 
         <!-- Autonomy Tiers Table -->
@@ -1115,28 +1320,75 @@ table.spec-table code {
               </tr>
               <tr>
                 <td><code>T1</code></td>
-                <td><strong>Act &amp; Notify</strong></td>
-                <td>Execute bounded, reversible operational actions; notify named human owner immediately post-action.</td>
-                <td>Immutable A-DoA Decision Record + owner notification receipt</td>
+                <td><strong>Act &amp; Notify / Per-Action Gate</strong></td>
+                <td>Execute bounded, reversible operational actions (or stage high-impact actions for synchronous <code>PER_ACTION_APPROVAL</code>); notify named human owner immediately.</td>
+                <td>Immutable A-DoA Decision Record + owner notification / approval receipt</td>
               </tr>
               <tr>
                 <td><code>T2</code></td>
                 <td><strong>Act Within Limits (Approve Above Threshold)</strong></td>
-                <td>Execute autonomously below monetary, volume, and frequency thresholds derived from the enterprise DoA; route above-threshold actions for human sign-off.</td>
-                <td>A-DoA Decision Record + threshold evaluation proof + human approval link (when triggered)</td>
+                <td>Execute autonomously below single-action (<code>blast_radius_usd</code>) and rolling 24h (<code>cumulative_24h_usd</code>) thresholds derived from the enterprise DoA; route above-threshold actions for human sign-off.</td>
+                <td>A-DoA Decision Record + RFC 8785 <code>resolved_action_digest</code> + threshold evaluation proof</td>
               </tr>
               <tr>
                 <td><code>T3</code></td>
-                <td><strong>Act Alone With Audit</strong></td>
-                <td>Execute across the action class (e.g., automated safety/quality quarantine); subject to statistical audit sampling and strict runtime downgrade triggers.</td>
+                <td><strong>Act Alone With Audit / Hard Boundary</strong></td>
+                <td>Execute pre-authorized containment actions (e.g., automated safety/quality quarantine) subject to statistical audit sampling — or enforce a hard runtime block (<code>T3_PROHIBITED</code>) on irreversible master-data/SoD mutations.</td>
                 <td>A-DoA Decision Record + quarterly control-owner sampling attestation</td>
               </tr>
             </tbody>
           </table>
         </div>
 
+        <!-- Runtime Suspension Triggers ST-01..ST-05 -->
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 3B · Deterministic Runtime Suspension Triggers (ST-01 to ST-05 — Schema v1.1.0 &amp; FINOS mi-24)</h3>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Trigger ID</th>
+                <th>Circuit-Breaker Name</th>
+                <th>Condition Evaluated at Runtime</th>
+                <th>Automatic Downgrade &amp; Reset Rule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>ST-01</code></td>
+                <td><strong>Aggregate Blast-Radius Exhaustion</strong></td>
+                <td>Rolling 24-hour cumulative monetary exposure (<code>cumulative_24h_usd</code>) reaches <code>&ge; 80%</code> of the action class's daily Delegation-of-Authority ceiling.</td>
+                <td>Trip circuit breaker (<code>status: TRIPPED</code>); automatically downgrade action class from <code>T2</code> to <code>T1</code> (<code>PER_ACTION_APPROVAL</code>) until window reset or owner re-authorization.</td>
+              </tr>
+              <tr>
+                <td><code>ST-02</code></td>
+                <td><strong>Human Override / Rejection Spike</strong></td>
+                <td>Human reviewers reject, modify, or roll back <code>&ge; K</code> consecutive agent proposals (or rolling rejection rate exceeds threshold).</td>
+                <td>Downgrade agent to <code>T0</code> (Observe &amp; Recommend); require control-owner review of failure cluster before restoring autonomy.</td>
+              </tr>
+              <tr>
+                <td><code>ST-03</code></td>
+                <td><strong>Upstream Tool / Payload Schema Drift</strong></td>
+                <td>Any change to <code>model_version</code>, prompt template, <code>policy_version</code>, or downstream ERP/API schema digest (<code>schema_sha256</code>).</td>
+                <td>Immediate downgrade by at least 1 tier until golden-set evaluation passes against the new version digest.</td>
+              </tr>
+              <tr>
+                <td><code>ST-04</code></td>
+                <td><strong>Grounding / Mandate State Deficit</strong></td>
+                <td>Required pre-condition evidence (<code>evidence_refs</code>, 3-way match, <code>GateCheck</code> ASN validation, or active <code>grant_id</code>) is missing, expired, or unverifiable.</td>
+                <td>Hard pre-execution block; emit decision record with <code>tripped_trigger: ST-04</code> and route to human queue.</td>
+              </tr>
+              <tr>
+                <td><code>ST-05</code></td>
+                <td><strong>Downstream Execution / <code>outcome-unknown</code> Spike</strong></td>
+                <td>Downstream ERP/API returns ambiguous commit state (<code>outcome-unknown</code>), timeout spike, or missing idempotency/<code>rollback_token</code> confirmation.</td>
+                <td>Halt unattended <code>T2</code> execution immediately to prevent duplicate financial/inventory mutations; require reconciliation before reset.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <!-- Worked Operations DoA Matrix -->
-        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 3B · Reference A-DoA Control Matrix for Supply-Chain &amp; Finance Action Classes</h3>
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; margin: 1.75rem 0 0.5rem;">Table 3C · Reference A-DoA Control Matrix for Supply-Chain &amp; Finance Action Classes</h3>
         <div class="table-wrap">
           <table class="spec-table">
             <thead>
@@ -1155,7 +1407,7 @@ table.spec-table code {
                 <td><code>T2</code></td>
                 <td>Cost delta &le; threshold per shipment; &le; N reroutes/day</td>
                 <td>Active carrier contract; predicted SLA breach confirmed</td>
-                <td>Carrier rate table stale or exception rate &gt; threshold over rolling 24h → downgrade to <code>T0</code></td>
+                <td>Carrier rate table stale (<code>ST-04</code>) or exception rate &gt; threshold over rolling 24h (<code>ST-02</code>) → downgrade to <code>T0</code></td>
                 <td>Logistics Operations Manager</td>
               </tr>
               <tr>
@@ -1163,7 +1415,7 @@ table.spec-table code {
                 <td><code>T2</code></td>
                 <td>&le; N units per SKU/day; walk-in floor preserved</td>
                 <td>Zero open quality/NCU alerts on SKU</td>
-                <td>Inventory discrepancy or stock-out spike → downgrade to <code>T0</code></td>
+                <td>Inventory discrepancy or stock-out spike (<code>ST-05</code>) → downgrade to <code>T0</code></td>
                 <td>Store Inventory Lead</td>
               </tr>
               <tr>
@@ -1171,7 +1423,7 @@ table.spec-table code {
                 <td><code>T2</code></td>
                 <td>PO value &le; DoA band; approved AVL supplier only</td>
                 <td>Blanket agreement active; open budget verified</td>
-                <td>Unit-price variance &gt; 0% vs. contract master → block &amp; downgrade</td>
+                <td>Unit-price variance &gt; 0% vs. contract master (<code>ST-04</code>) or cumulative 24h spend &ge; 80% ceiling (<code>ST-01</code>) → block &amp; downgrade</td>
                 <td>Procurement Category Manager</td>
               </tr>
               <tr>
@@ -1179,7 +1431,7 @@ table.spec-table code {
                 <td><code>T2</code></td>
                 <td>Invoice &le; DoA band; quantity/price variance within tolerance</td>
                 <td>Validated PO, factory-gate ASN (<code>GateCheck</code>), and 3PL receipt match</td>
-                <td>Any change to prompt/model/policy version → automatic downgrade 1 tier until golden-set re-audit</td>
+                <td>Any change to prompt/model/policy version (<code>ST-03</code>) → automatic downgrade 1 tier until golden-set re-audit</td>
                 <td>Accounts Payable Controller</td>
               </tr>
               <tr>
@@ -1187,14 +1439,14 @@ table.spec-table code {
                 <td><code>T3</code> / <code>T1</code></td>
                 <td>Quarantine hold: <code>T3</code> (immediate); credit denial: <code>T0/T1</code> (human review)</td>
                 <td><code>BC-01..BC-04</code> mismatch or quality alert</td>
-                <td>False-positive rate on golden set exceeds bound → downgrade to <code>T1</code></td>
+                <td>False-positive rate on golden set exceeds bound (<code>ST-02</code>) → downgrade to <code>T1</code></td>
                 <td>Quality &amp; Brand-Protection Manager</td>
               </tr>
               <tr>
                 <td><strong>Modify supplier master data or payment terms</strong></td>
-                <td><code>T0</code></td>
+                <td><code>T0</code> / <code>T3_PROHIBITED</code></td>
                 <td>Prohibited from autonomous execution (segregation of duties)</td>
-                <td>Dual human approval required</td>
+                <td>Dual human approval required (<code>DUAL_KEY_APPROVAL</code>)</td>
                 <td>Hard runtime block in tool layer</td>
                 <td>Master-Data Governance Owner</td>
               </tr>
@@ -1206,7 +1458,7 @@ table.spec-table code {
         <div id="adoa-readiness-calc" class="calculator-box">
           <div class="calc-header">
             <div>
-              <span class="section-kicker">Interactive Procurement &amp; Audit Tool (Aligned with IEEE 3119 / ISO 42001 / COSO)</span>
+              <span class="section-kicker">Interactive Procurement &amp; Audit Tool (Aligned with FINOS mi-24 / IEEE 3119 / ISO 42001 / COSO)</span>
               <h3 style="font-family: var(--font-serif); font-size: 1.25rem; margin: 0;">A-DoA Vendor Autonomy-Readiness Assessment (10 Core Controls)</h3>
               <p style="font-size: 0.84rem; color: var(--text-muted); margin: 0.25rem 0 0;">
                 Evaluate any internal or vendor AI agent before granting Tier T1–T3 autonomy in production.
@@ -1235,67 +1487,98 @@ table.spec-table code {
         <div class="section-header">
           <div>
             <span class="section-kicker">Scholarship, Industry Practice &amp; Convening</span>
-            <h2 class="section-title">Publications, Working Papers &amp; Speaking</h2>
+            <h2 class="section-title">Publications, Working Papers, Talks &amp; Peer Review</h2>
           </div>
         </div>
 
         <div class="two-col">
           <div class="panel">
-            <h4>Published Practitioner Articles &amp; Open Specifications</h4>
+            <h4>Published Articles, White Papers &amp; Open Specifications</h4>
             <ul>
               <li>
-                <strong>ISM <em>Inside Supply Management</em> (September 2026, Published):</strong>
-                "Unifying the Pipeline: Bridging B2B Manufacturing and Direct-to-Consumer Retail Fulfillment" — Swosti Panda.
+                <strong>INFORMS <em>Analytics</em> Magazine (October 21, 2026, Published):</strong>
+                <a href="https://pubsonline.informs.org/do/10.1287/LYTX.2026.03.18/full/" target="_blank" rel="noopener"><em>"When Operations Research Meets Agentic AI"</em></a> — Swosti Panda. Official Crossref DOI: <a href="https://doi.org/10.1287/LYTX.2026.03.18" target="_blank" rel="noopener"><code>10.1287/LYTX.2026.03.18</code></a>.
+                <button type="button" class="btn btn-secondary btn-sm" style="padding: 0.12rem 0.45rem; font-size: 0.7rem; margin-left: 0.25rem;" onclick="copyCitation('informs2026')">Copy BibTeX</button>
               </li>
               <li>
-                <strong>INFORMS <em>Analytics</em> Magazine (October 2026):</strong>
-                Practitioner feature on enterprise supply-chain and operations analytics — Swosti Panda.
+                <strong>ISM <em>Inside Supply Management</em> (October 21, 2026, Published):</strong>
+                <a href="https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2026/2026-10/how-touchless-cost-automation-eliminates-a-blind-spot/" target="_blank" rel="noopener"><em>"How Touchless Cost Automation Eliminates a 'Blind Spot'"</em></a> — Swosti Panda.
               </li>
               <li>
-                <strong>Zenodo Open Specification (October 2026, Published):</strong>
-                <em>GateCheck &amp; BirthCheck: Factory-Gate Identity Integrity and Component-Birth-Record Reconciliation for Hardware Supply Chains (v1.0)</em> — <a href="https://doi.org/10.5281/zenodo.23274812" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23274812</a>.
+                <strong>ISM <em>Inside Supply Management</em> (September 22, 2026, Published):</strong>
+                <a href="https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2026/2026-09/the-bridge-between-b2b-manufacturing-and-dtc-retail-fulfillment/" target="_blank" rel="noopener"><em>"Unifying the Pipeline: The Bridge Between B2B Manufacturing and DTC Retail Fulfillment"</em></a> — Swosti Panda.
               </li>
               <li>
-                <strong>Zenodo Open Specification (October 2026, Published):</strong>
-                <em>StoreNode &amp; TimeSplit: Modeling Physical Stores as Planned Supply Nodes with Time-Phased Channel Segmentation (v1.0)</em> — <a href="https://doi.org/10.5281/zenodo.23275008" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275008</a>.
+                <strong>ISM <em>Inside Supply Management</em> Magazine (Accepted October 12, 2026 for January 2027 Print/Digital Issue):</strong>
+                <em>"When AI Stops Suggesting and Starts Acting"</em> — Swosti Panda.
               </li>
               <li>
-                <strong>Zenodo Open Specification (October 2026, Published):</strong>
-                <em>Agent Delegation-of-Authority (A-DoA) Framework: Operational Governance, Autonomy Tiers (T0–T3), Suspension Triggers, and Decision Records (v1.0)</em> — <a href="https://doi.org/10.5281/zenodo.23275115" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275115</a>.
+                <strong>AGMA Industry White Paper Series (October 2026):</strong>
+                <em>"Turning EU Digital Product Passports (DPP) Into a Brand Protection Shield: How Factory-Gate Identity (GateCheck) and Component Birth Records (BirthCheck) Stop Counterfeits and Warranty Fraud"</em> — Swosti Panda, SMIEEE and Minsi Su (<em>Board Director, AGMA</em>).
+              </li>
+              <li>
+                <strong>Zenodo Open Specifications (October 2026, Published):</strong>
+                <em>GateCheck &amp; BirthCheck (v1.0)</em> [<a href="https://doi.org/10.5281/zenodo.23274812" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23274812</a>] ·
+                <em>StoreNode &amp; TimeSplit (v1.0)</em> [<a href="https://doi.org/10.5281/zenodo.23275008" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275008</a>] ·
+                <em>A-DoA Framework (v1.0)</em> [<a href="https://doi.org/10.5281/zenodo.23275115" target="_blank" rel="noopener">DOI: 10.5281/zenodo.23275115</a>].
               </li>
             </ul>
 
-            <h4 style="margin-top: 1.25rem;">Book Monograph &amp; Manuscripts Under Review</h4>
+            <h4 style="margin-top: 1.25rem;">Book Monograph &amp; Refereed Manuscripts Under Review</h4>
             <ul>
               <li>
-                <strong>Springer Monograph Proposal (Submitted October 2026):</strong>
-                <em>Agentic AI in Smart Systems</em> — Swosti Panda, SMIEEE (lead author) and Dr. Swati Panda, Ph.D. (New York Institute of Technology). 9-chapter monograph covering multi-agent architectures, digital custody and multi-tier device serialization (Ch. 4), autonomous failure analysis (Ch. 5), omnichannel optimization (Ch. 6), touchless cost engineering (Ch. 7), evaluation/golden sets/HITL tiers (Ch. 8), and agent governance (Ch. 9).
+                <strong>Springer Nature Monograph (In Contract Review / Proposal Submitted October 2026):</strong>
+                <em>Agentic AI in Smart Systems: From Autonomous Operations to Self-Healing Supply Chains</em> — Swosti Panda, SMIEEE (Lead Author, Chs. 4–9) and Dr. Swati Panda, Ph.D. (Co-Author, Chs. 1–3). 9-chapter monograph (~295 pp.) with complete sample chapters on factory-gate identity integrity (Ch. 4), autonomous failure analysis (Ch. 5), <em>StoreNode &amp; TimeSplit</em> omnichannel optimization (Ch. 6), touchless cost engineering (Ch. 7), <em>A-DoA</em> runtime guardrails (Ch. 8), and B2B self-healing governance (Ch. 9).
+              </li>
+              <li>
+                <strong><em>IEEE Engineering Management Review</em> (<code>EMR-26-0272</code>, Under Review — Awaiting Editor-in-Chief Decision, October 2026):</strong>
+                <em>"Managing the 'Portfolio Paradox' in Supply Chain AI: Practitioner Insights from Global Hardware Operations"</em> — Swosti Panda.
               </li>
               <li>
                 <strong><em>IEEE Software</em> (Manuscript Under Review, 2026):</strong>
-                "From Hallucinations to Determinism" — Swosti Panda.
-              </li>
-              <li>
-                <strong><em>IEEE Engineering Management Review</em> (Manuscript Under Review, 2026):</strong>
-                "Managing the 'Portfolio Paradox' in Supply Chain AI: Practitioner Insights from Global Hardware Operations" — Swosti Panda.
+                <em>"From Hallucinations to Determinism"</em> — Swosti Panda.
               </li>
             </ul>
           </div>
 
           <div class="panel">
-            <h4>Invited Talks, Standards &amp; The IEEE TEMS-SCV Series</h4>
+            <h4>Invited Talks, Standards Briefings &amp; Governance</h4>
             <ul>
               <li>
+                <strong>October 24, 2026 — INFORMS JRING Invited Speaker Series:</strong>
+                <em>"From Sequential Decision Policies to Bounded Production Execution: Multi-Regime Inventory Promising (StoreNode &amp; TimeSplit) and Agent Delegation-of-Authority (A-DoA) in Operations"</em> — Invited presentation to the INFORMS Junior Faculty &amp; Doctoral Student Forum.
+              </li>
+              <li>
+                <strong>October 21, 2026 — Linux Foundation / FINOS AI Governance Framework Working Group (<a href="https://github.com/finos/ai-governance-framework/issues/416" target="_blank" rel="noopener">#416</a>):</strong>
+                Invited technical presentation and defense of <a href="https://github.com/finos/ai-governance-framework/pull/412" target="_blank" rel="noopener">PR #412</a> (<em>Action-Level Authority, Graded Autonomy Tiers &amp; Runtime Circuit Breakers</em> for Mitigation <code>mi-24</code>).
+              </li>
+              <li>
                 <strong>December 3, 2026 — IEEE TEMS Santa Clara Valley Chapter Talk:</strong>
-                <em>"When AI Stops Suggesting and Starts Acting: Governing Autonomous Systems in Operations"</em> — public presentation of the <strong>A-DoA Framework</strong> (<em>Delegate · Bound · Record · Own</em>) and <strong>Autonomy Tiers T0–T3</strong>.
+                <em>"When AI Stops Suggesting and Starts Acting: Governing Autonomous Systems in Operations"</em> — Silicon Valley chapter presentation of the <strong>A-DoA Framework</strong> (<em>Delegate · Bound · Record · Own</em>) and <strong>Autonomy Tiers T0–T3</strong>.
+              </li>
+              <li>
+                <strong>Summer 2027 — AGMA Global Conference Invited Session:</strong>
+                Co-presenting <em>"Turning EU Digital Product Passports (DPP) Into a Brand Protection Shield"</em> with AGMA Board Director Minsi Su.
               </li>
               <li>
                 <strong>2027 Monthly Webinar Series — <em>Acting Agents &amp; Trusted Supply Chains</em>:</strong>
-                Curated as Board Member of the IEEE TEMS Santa Clara Valley Chapter, convening practitioners from GS1, IPC, AGMA, INFORMS, and enterprise AI governance.
+                Curated as Board Member of the IEEE TEMS Santa Clara Valley Chapter, convening practitioners across GS1, IPC, AGMA, FINOS, and INFORMS.
+              </li>
+            </ul>
+
+            <h4 style="margin-top: 1.25rem;">Peer Review, Standards Review &amp; Judging Service (33 Reviews in 2026)</h4>
+            <ul>
+              <li>
+                <strong>Journal &amp; Conference Peer Reviewer:</strong>
+                <em>IEEE Access</em> (8 distinct manuscripts / 11 review rounds; <a href="https://www.webofscience.com/wos/author/record/QQA-6174-2026" target="_blank" rel="noopener">Web of Science verified</a>), <em>IEEE Transactions on Engineering Management</em> (1 manuscript: <code>TEM-26-2276</code>), <em>IEEE ICLIE 2026</em> (4 conference papers), and <em>IEEE Educational Activities</em> e-Learning Peer Reviewer (3 courses evaluated).
               </li>
               <li>
-                <strong>Peer Review &amp; Judging Service:</strong>
-                Reviewer for <em>IEEE Transactions on Engineering Management</em>, <em>IEEE Access</em>, and <em>IEEE ICLIE 2026</em>; Observer on the <strong>INFORMS Franz Edelman Award Selection Committee (2026–2027)</strong>.
+                <strong>Awards Committee Service:</strong>
+                Observer, <strong>INFORMS Franz Edelman Award Selection Committee (2026–2027)</strong> — evaluated 18 institutional semifinalist entries across retail, logistics, manufacturing, telecommunications, and energy.
+              </li>
+              <li>
+                <strong>Open-Source Standards &amp; Specification Reviewer (14 Completed Reviews):</strong>
+                Reviewed 9 pull requests and 3 specification issues for the <strong>Linux Foundation / FINOS AI Governance Framework</strong> (<a href="https://github.com/finos/ai-governance-framework/pull/364" target="_blank" rel="noopener">#364</a>, <a href="https://github.com/finos/ai-governance-framework/pull/374" target="_blank" rel="noopener">#374</a>, <a href="https://github.com/finos/ai-governance-framework/pull/394" target="_blank" rel="noopener">#394</a>, <a href="https://github.com/finos/ai-governance-framework/pull/400" target="_blank" rel="noopener">#400</a>, <a href="https://github.com/finos/ai-governance-framework/pull/408" target="_blank" rel="noopener">#408</a>, <a href="https://github.com/finos/ai-governance-framework/pull/415" target="_blank" rel="noopener">#415</a>, <a href="https://github.com/finos/ai-governance-framework/pull/417" target="_blank" rel="noopener">#417</a>, <a href="https://github.com/finos/ai-governance-framework/pull/418" target="_blank" rel="noopener">#418</a>, <a href="https://github.com/finos/ai-governance-framework/pull/419" target="_blank" rel="noopener">#419</a>; issues <a href="https://github.com/finos/ai-governance-framework/issues/407" target="_blank" rel="noopener">#407</a>, <a href="https://github.com/finos/ai-governance-framework/issues/420" target="_blank" rel="noopener">#420</a>, <a href="https://github.com/finos/ai-governance-framework/issues/421" target="_blank" rel="noopener">#421</a>), 1 security &amp; lifecycle PR for <strong>EU Digital Product Passport <code>open-dpp</code></strong> (<a href="https://github.com/open-dpp/open-dpp/pull/1078" target="_blank" rel="noopener">PR #1078</a>), and 2 schema/test-suite PRs for <strong>GS1 <code>openEPCIS</code></strong> (<a href="https://github.com/openepcis/openepcis-test-resources/pull/12" target="_blank" rel="noopener">PR #12</a>, <a href="https://github.com/openepcis/openepcis-test-resources/pull/15" target="_blank" rel="noopener">PR #15</a>).
               </li>
             </ul>
           </div>
@@ -1338,7 +1621,7 @@ table.spec-table code {
               <select id="adopt-type" required>
                 <option value="Production / Pilot Implementation">Production or Pilot Implementation</option>
                 <option value="Internal Control / Audit Checklist">Internal Control or Vendor Audit Checklist</option>
-                <option value="Standards / Working-Group Reference">Standards / Working-Group Reference (IPC, GS1, AGMA, IEEE)</option>
+                <option value="Standards / Working-Group Reference">Standards / Working-Group Reference (IPC, GS1, AGMA, FINOS, IEEE)</option>
                 <option value="Academic Citation / Course Syllabus">Academic Citation or Course Syllabus</option>
               </select>
             </div>
@@ -1366,10 +1649,10 @@ table.spec-table code {
           <span class="section-kicker">About the Author</span>
           <h2 class="section-title" style="margin-bottom: 0.75rem;">Swosti Panda, SMIEEE</h2>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0 0 0.85rem;">
-            Swosti Panda designs the business systems that run physical-product supply chains. At Google Devices &amp; Services she has authored the functional designs behind a sequence of launches since 2020: device-level serialization and identity integrity from the factory onward; the inbound-logistics and receipt services of an Oracle-to-SAP S/4HANA transformation; the omnichannel inventory architecture behind Google's physical stores; the hardware costing platform; and the product requirements for a multi-agent AI assistant for hardware failure analysis. Before Google she led BI and analytics for Sam's Club's retail fuel business at Walmart and configured SAP supply-chain and finance modules at Infosys Consulting.
+            Swosti Panda designs the business systems and autonomous control architectures that run physical-product supply chains. At <strong>Google LLC (Devices &amp; Services)</strong> (2019–present; Business Systems Analyst, promoted to Senior Business Systems Analyst effective November 2026), she has authored the functional designs behind a sequence of global supply-chain, retail, finance, and AI systems since 2020: factory-gate device serialization and component-level identity integrity; the inbound-logistics, ASN, container, and receipt microservices of a global Oracle-to-SAP S/4HANA transformation; the omnichannel inventory and in-transit promising architecture behind physical retail stores; the touchless hardware product-costing and COGS reclassification platform; and the product requirements for a multi-agent AI platform for hardware failure analysis. Before Google, she served as Product Lead for Business Intelligence &amp; Analytics at <strong>Walmart Inc. (Sam's Club — Next Tech)</strong> (2018–2019) and as Technology Analyst / SAP &amp; BI Consultant at <strong>Infosys Consulting</strong> (2012–2018).
           </p>
           <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">
-            She is an IEEE Senior Member, a Board Member of the IEEE Technology and Engineering Management Society (TEMS) Santa Clara Valley Chapter, an Observer on the INFORMS Franz Edelman Award Selection Committee (2026–2027), a peer reviewer for <em>IEEE Access</em> and <em>IEEE Transactions on Engineering Management</em>, and a contributor to ISM's <em>Inside Supply Management</em> and INFORMS <em>Analytics</em>.
+            She is an <strong>IEEE Senior Member (SMIEEE)</strong>, a <strong>Board Member of the IEEE Technology and Engineering Management Society (TEMS) Santa Clara Valley Chapter</strong>, an <strong>Industry Advisory Board Member for Computer Science &amp; Engineering (CIST) at West Valley College</strong>, and an <strong>Observer on the INFORMS Franz Edelman Award Selection Committee (2026–2027)</strong>. Her work is published in INFORMS <em>Analytics</em> Magazine (<a href="https://doi.org/10.1287/LYTX.2026.03.18" target="_blank" rel="noopener">DOI: 10.1287/LYTX.2026.03.18</a>) and ISM's <em>Inside Supply Management</em>, and her open-source validation and governance primitives are integrated into <strong>GS1 <code>openEPCIS</code></strong>, the <strong>Linux Foundation / FINOS AI Governance Framework</strong>, and the <strong>EU Digital Product Passport (<code>open-dpp</code>)</strong> ecosystem.
           </p>
           <p style="font-size: 0.78rem; color: var(--text-muted); margin: 1rem 0 0; padding-top: 0.75rem; border-top: 1px solid var(--border-hairline);">
             <em>Disclaimer:</em> All frameworks, schemas, and specifications on this site are published in a personal professional capacity at a vendor-neutral pattern level with synthetic illustrations, and do not represent confidential information or official positions of Google LLC or Alphabet Inc.
@@ -1382,13 +1665,14 @@ table.spec-table code {
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        <strong>Swosti Panda</strong> · Open Supply-Chain &amp; Agentic Operations Specifications<br />
+        <strong>Swosti Panda, SMIEEE</strong> · Open Supply-Chain &amp; Agentic Operations Specifications<br />
         Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0). Schemas licensed under Apache 2.0.
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
         <a href="https://github.com/swostipanda" target="_blank" rel="noopener">GitHub</a>
         <a href="https://scholar.google.com/citations?user=uuxtl9YAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://orcid.org/0009-0008-3947-4437" target="_blank" rel="noopener">ORCID</a>
+        <a href="https://www.webofscience.com/wos/author/record/QQA-6174-2026" target="_blank" rel="noopener">Web of Science</a>
       </div>
     </div>
   </footer>
@@ -1430,6 +1714,15 @@ const CITATIONS = {
   doi          = {10.5281/zenodo.23275115},
   url          = {https://doi.org/10.5281/zenodo.23275115},
   note         = {Canonical Hub: https://swostipanda.github.io/#adoa · ORCID: 0009-0008-3947-4437 · CC BY 4.0}
+}`,
+  informs2026: `@article{panda2026informs,
+  author       = {Panda, Swosti},
+  title        = {{When Operations Research Meets Agentic AI}},
+  journal      = {INFORMS Analytics Magazine},
+  year         = {2026},
+  month        = oct,
+  doi          = {10.1287/LYTX.2026.03.18},
+  url          = {https://doi.org/10.1287/LYTX.2026.03.18}
 }`
 };
 
